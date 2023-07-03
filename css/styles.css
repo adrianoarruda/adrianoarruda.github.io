@@ -2905,6 +2905,10 @@ textarea.form-control-lg {
 .btn-whatsapp:hover {
   opacity: 0.8;
 }
+.btn2:hover {
+  background-color: #36d370;
+  color: #fff;
+}
 
 
 .btn-secondary {
