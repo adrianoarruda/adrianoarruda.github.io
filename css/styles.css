@@ -2884,26 +2884,26 @@ textarea.form-control-lg {
   --bs-btn-disabled-bg: #25D366;
   --bs-btn-disabled-border-color: #25D366;
 }
-.whatsapp-icon {
+/* Estilos para o botão do WhatsApp */
+.btn-whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
-  background-color: #25D366;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
   width: 60px;
   height: 60px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #fff;
   text-align: center;
-  line-height: 60px;
   font-size: 24px;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+  line-height: 60px;
+  z-index: 9999;
+  transition: opacity 0.3s;
+  opacity: 0; /* Inicialmente, o botão estará invisível */
 }
 
-.whatsapp-icon.show {
-  opacity: 1;
+.btn-whatsapp:hover {
+  opacity: 0.8;
 }
 
 
