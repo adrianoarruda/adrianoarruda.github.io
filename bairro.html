@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modal de Bairro</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Verificar Distância</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Botão para abrir o modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bairroModal">
-            Verificar Bairro
-        </button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="bairroModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                
-                    <!-- Cabeçalho do modal -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Bairro do Usuário</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    
-                    <!-- Corpo do modal -->
-                    <div class="modal-body">
-                        <p>O bairro do usuário é: <span id="bairro"></span></p>
-                    </div>
-                    
-                    <!-- Rodapé do modal -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="message"></div>
+    <div id="coordinates"></div>
+    <P>
+        23.523428248133943, <br> -46.71005351781241
+    </P>
+
+
 
     <script>
-        // Função para obter o bairro usando a geolocalização do navegador
-        function getBairro() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
+        // Função para calcular a distância entre duas coordenadas usando a fórmula Haversine
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            var earthRadius = 6371; // Raio médio da Terra em quilômetros
+            var dLat = toRadians(lat2 - lat1);
+            var dLon = toRadians(lon2 - lon1);
+
+            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var distance = earthRadius * c;
+
+            return distance;
+        }
+
+        // Função auxiliar para converter graus em radianos
+        function toRadians(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+
+        // Coordenadas do ponto de referência
+        var referenceLatitude = -23.523428248133943;
+        var referenceLongitude = -46.71005351781241;
+
+        // Verifica a distância entre as coordenadas do usuário e as coordenadas de referência
+        function checkDistance(userLatitude, userLongitude) {
+            var distance = calculateDistance(referenceLatitude, referenceLongitude, userLatitude, userLongitude);
+
+            if (distance <= 10) {
+                // O usuário está dentro do raio de 10 km
+                $('#message').text('Você está dentro do raio de 10 km.');
             } else {
-                alert("Geolocalização não é suportada pelo seu navegador.");
+                // O usuário está fora do raio de 10 km
+                $('#message').text('Você está fora do raio de 10 km.');
             }
-        }
-        
-        // Função para exibir o bairro no modal
-        function showPosition(position) {
-            // Aqui você pode usar uma API de geolocalização para obter o bairro com base nas coordenadas fornecidas
-            // Neste exemplo, estamos apenas definindo um valor fixo para demonstração
-            var bairro = "Exemplo de Bairro";
-            
-            // Atualiza o elemento de exibição do bairro no modal
-            document.getElementById("bairro").innerHTML = bairro;
-        }
-    </script>
 
-    <script>
-        // Chama a função getBairro() quando o modal é aberto
-        $('#bairroModal').on('shown.bs.modal', function () {
-            getBairro();
-        });
+            // Exibe as coordenadas do usuário
+            $('#coordinates').text('Suas coordenadas são: Latitude ' + userLatitude.toFixed(6) + ', Longitude ' + userLongitude.toFixed(6));
+        }
+
+        // Obtém a localização do usuário usando a geolocalização do navegador
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatitude = position.coords.latitude;
+                var userLongitude = position.coords.longitude;
+
+                checkDistance(userLatitude, userLongitude);
+            });
+        } else {
+            $('#message').text('Geolocalização não é suportada pelo seu navegador.');
+        }
     </script>
 </body>
 </html>
