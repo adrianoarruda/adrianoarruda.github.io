@@ -41,7 +41,7 @@
                             <p class="lead2 text-white mb-4">E COM FRETE GRÁTIS NA REGIÃO</p>
                             <p class="lead3 text-white mb-4">Cimento • Areia • Pedra • Argamassa • Tintas • Hidráulica • Elétrica • Madeira •  Portas • Batentes 
                             </p>
-                            <a class="btn btn-whats btn-lg px-4 me-sm-3" href="https://api.whatsapp.com/send/?phone=%2B5511975478774&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o&type=phone_number&app_absent=0">
+                            <a id="whatsapp-button" class="btn btn-whats btn-lg px-4 me-sm-3" href="https://api.whatsapp.com/send/?phone=%2B5511975478774&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o&type=phone_number&app_absent=0">
                                 <i class="bi bi-whatsapp me-2"></i> chama no Zap!
                             </a>
                         </div>
@@ -356,5 +356,25 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+        window.addEventListener('scroll', function() {
+            var button = document.getElementById('whatsapp-button');
+            var icon = document.createElement('i');
+            icon.classList.add('bi', 'bi-whatsapp');
+            
+            if (window.scrollY > 100) {
+                button.style.display = 'none';
+                document.body.appendChild(icon);
+                icon.classList.add('whatsapp-icon', 'show');
+            } else {
+                button.style.display = 'block';
+                var icons = document.getElementsByClassName('whatsapp-icon');
+                for (var i = 0; i < icons.length; i++) {
+                    icons[i].parentNode.removeChild(icons[i]);
+                }
+            }
+        });
+    </script>
+        
     </body>
 </html>

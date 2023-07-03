@@ -2884,6 +2884,28 @@ textarea.form-control-lg {
   --bs-btn-disabled-bg: #25D366;
   --bs-btn-disabled-border-color: #25D366;
 }
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.whatsapp-icon.show {
+  opacity: 1;
+}
+
 
 
 
