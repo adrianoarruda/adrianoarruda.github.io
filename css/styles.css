@@ -490,11 +490,16 @@ progress {
   font-size: 1.25rem;
   font-weight: 300;
 }
+.lead2 {
+  font-size: 1.50rem;
+  font-weight: 100;
+}
+
 
 .display-1 {
-  font-size: calc(1.625rem + 4.5vw);
-  font-weight: 300;
-  line-height: 1.2;
+  font-size: calc(2.0rem + 4.5vw);
+  font-weight: 500;
+  line-height: 1.1;
 }
 @media (min-width: 1200px) {
   .display-1 {
@@ -8181,6 +8186,27 @@ textarea.form-control-lg {
 .bg-dark {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+.bg-image {
+  position: relative;
+  background-image: url("../background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-image .container {
+  position: relative;
+  z-index: 1;
 }
 
 .bg-black {
