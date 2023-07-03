@@ -12,8 +12,25 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <script>
+            function obterLocalizacao() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                  var latitude = position.coords.latitude;
+                  var longitude = position.coords.longitude;
+                  console.log('Latitude: ' + latitude);
+                  console.log('Longitude: ' + longitude);
+                  
+                  // Aqui você pode usar essas informações para determinar a região do usuário
+                });
+              } else {
+                console.log('Geolocalização não suportada pelo navegador.');
+              }
+            }
+          </script>
     </head>
-    <body>
+    <body onload="obterLocalizacao()">
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
@@ -60,75 +77,79 @@
   
   
       
-        <!-- Features section-->
-        <section class="py-5 border-bottom" id="features">
-            <div class="container px-5 my-5">
-                <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                        <h2 class="h4 fw-bolder">Featured title</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                        <h2 class="h4 fw-bolder">Featured title</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h4 fw-bolder">Featured title</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="feature-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Bem-vindo(a) à Alfredo Madeiras!</h2>
+          <p>Somos a sua loja de materiais para construção na Lapa. Oferecemos produtos de grandes marcas a preços competitivos, com atendimento personalizado e entrega imediata, sem custo de frete.</p>
+          <p>Na Alfredo Madeiras, você encontrará uma ampla variedade de produtos, desde itens básicos como cimento, areia e tijolos, até materiais essenciais como madeira, porta e batente.</p>
+          <p>Fale conosco pelo WhatsApp ou visite nossa loja na Lapa hoje mesmo e descubra como podemos transformar o seu projeto de construção em realidade!</p>
+        </div>
+        <div class="col-lg-6">
+          <!-- Google Maps embed -->
+          <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2454105630723!2d-46.71266062499294!3d-23.523674178825704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef889f2840001%3A0xad80c14cd90ebfb8!2sAlfredo%20Madeiras%20-%20Materiais%20para%20Constru%C3%A7%C3%A3o!5e0!3m2!1sen!2sbr!4v1688422361510!5m2!1sen!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+          
+          
        
         <!-- Testimonials section-->
         <section class="py-5 border-bottom">
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bolder">Customer testimonials</h2>
-                    <p class="lead mb-0">Our customers love working with us</p>
+                    <h2 class="fw-bolder">Depoimentos de clientes</h2>
+                    <p class="lead mb-0">Nossos clientes adoram trabalhar conosco</p>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
-                        <!-- Testimonial 1-->
+                    <!-- Testimonial 1-->
                         <div class="card mb-4">
                             <div class="card-body p-4">
                                 <div class="d-flex">
-                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="flex-shrink-0"><img src="assets/images/testimonial1.png" alt="Imagem de depoimento" class="testimonial-image"></div>
                                     <div class="ms-4">
-                                        <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
-                                        <div class="small text-muted">- Client Name, Location</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 2-->
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
-                                    <div class="ms-4">
-                                        <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
-                                        <div class="small text-muted">- Client Name, Location</div>
-                                    </div>
-                                </div>
-                            </div>
+                                        <p class="mb-1">Tem tudo para sua construção, bom atendimento e aberto para negociar 👏🏻👏🏻</p>
+                                        <div class="small text-muted">- Jorge Gondo</div>
                         </div>
                     </div>
+                </div>
+            </div>
+                         <!-- Testimonial 1-->
+                         <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><img src="assets/images/testimonial2.png" alt="Imagem de depoimento" class="testimonial-image"></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Gratificante, pois já o conheço a uns 30 anos e sempre te atende com muita alegria
+                                        </p>
+                                        <div class="small text-muted">- Thomaz Telles</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0"><img src="assets/images/testimonial3.png" alt="Imagem de depoimento" class="testimonial-image"></div>
+                        <div class="ms-4">
+                            <p class="mb-1">Compro tudo com eles, simpáticos e tem tudo.
+                            </p>
+                            <div class="small text-muted">- Canal Mãe de Noiva</div>
+            </div>
+        </div>
+    </div>
+</div>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -159,6 +180,8 @@
               }
             });
             </script>
+            
+
             
             
     </body>
