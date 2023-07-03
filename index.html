@@ -14,7 +14,7 @@
         <link href="css/styles.css" rel="stylesheet" />
 
         <script>
-            function obterLocalizacao() {
+            function verificarLocalizacao() {
               if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                   var latitude = position.coords.latitude;
@@ -22,7 +22,18 @@
                   console.log('Latitude: ' + latitude);
                   console.log('Longitude: ' + longitude);
                   
-                  // Aqui você pode usar essas informações para determinar a região do usuário
+                  // Verificar se o usuário está na zona oeste de São Paulo
+                  if (latitude >= -23.6591 && latitude <= -23.4643 && longitude >= -46.8102 && longitude <= -46.6725) {
+                    // Usuário está na zona oeste de São Paulo
+                    console.log('Usuário está na zona oeste de São Paulo.');
+                  } else {
+                    // Usuário não está na zona oeste de São Paulo
+                    console.log('Usuário não está na zona oeste de São Paulo. Exibir modal.');
+                    
+                    // Exibir modal informando que não fazemos entrega na região
+                    // Você pode utilizar uma biblioteca como Bootstrap para criar o modal
+                    // e exibir a mensagem adequada para o usuário
+                  }
                 });
               } else {
                 console.log('Geolocalização não suportada pelo navegador.');
@@ -30,7 +41,7 @@
             }
           </script>
     </head>
-    <body onload="obterLocalizacao()">
+    <body onload="verificarLocalizacao()">
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
