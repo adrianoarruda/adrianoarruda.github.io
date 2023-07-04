@@ -58,8 +58,7 @@
 <a href="https://api.whatsapp.com/send?phone=NUMERO_DE_TELEFONE" class="btn2 btn-whatsapp d-flex align-items-center justify-content-center d-md-none" target="_blank">
     <i class="bi bi-whatsapp"></i>
   </a>
-  
-  
+   
       
   <section class="feature-section py-5">
     <div class="container">
@@ -78,11 +77,7 @@
         </div>
       </div>
     </div>
-  </section>
-  
-  
-  
-          
+  </section>         
           
        
         <!-- Testimonials section-->
@@ -194,14 +189,11 @@
 
         if (distance <= 10) {
             // O usuário está dentro do raio de 10 km
-            $('#message').text('Você está dentro do raio de 10 km.');
+            console.log('Você está dentro do raio de 10 km.');
         } else {
             // O usuário está fora do raio de 10 km
-            $('#message').text('Você está fora do raio de 10 km.');
+            console.log('Você está fora do raio de 10 km.');
         }
-
-        // Exibe as coordenadas do usuário
-        $('#coordinates').text('Suas coordenadas são: Latitude ' + userLatitude.toFixed(6) + ', Longitude ' + userLongitude.toFixed(6));
     }
 
     // Obtém a localização do usuário usando a geolocalização do navegador
@@ -213,10 +205,9 @@
             checkDistance(userLatitude, userLongitude);
         });
     } else {
-        $('#message').text('Geolocalização não é suportada pelo seu navegador.');
+        console.log('Geolocalização não é suportada pelo seu navegador.');
     }
-</script>
-            
+</script>       
 
             
             
