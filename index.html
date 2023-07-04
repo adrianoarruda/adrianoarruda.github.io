@@ -12,6 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
     </head>
     <body>
@@ -39,15 +40,15 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-1 fw-bolder text-white mb-2">ENTREGA RÁPIDA</h1>
-                            
+                            <h1 class="display-1 fw-bolder text-white mb-2">ENTREGA RÁPIDA</h1>                            
                             <!--<p class="lead2 text-white mb-4">E COM FRETE GRÁTIS NA REGIÃO </p>-->
-                                <script>
-                               var html = '<p class="lead2 text-white mb-4">E COM FRETE GRÁTIS NA REGIÃO de ${locationName}</p>';
-                               $('.my-div').html(html);                                
-                                </script>
-                            <p class="lead3 text-white mb-4">Cimento • Areia • Pedra • Argamassa • Tintas • Hidráulica • Elétrica • Madeira •  Portas • Batentes 
-                            </p>
+                            <script>
+                                var html = '<p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO de ${locationName}</p>';
+                                $('.my-div').html(html);                                
+                            </script>
+                            <p class="lead3 text-white mb-4">Cimento • Areia • Pedra • Argamassa • Tintas • Hidráulica • Elétrica • Madeira •  Portas • Batentes</p>
+                        </div>
+                        
                             <!-- Botão exibido apenas em dispositivos móveis -->
 <!-- <a class="btn btn-whats btn-lg px-4 d-block d-md-none" href="https://api.whatsapp.com/send/?phone=%2B5511975478774&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o&type=phone_number&app_absent=0">
     <i class="bi bi-whatsapp me-2"></i> Chama no Zap! -->
@@ -170,7 +171,7 @@
             });
             </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <div id="location"></div>
 
