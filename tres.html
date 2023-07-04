@@ -13,6 +13,7 @@
     <a class="btn btn-whats btn-lg px-4 me-sm-3" href="" id="whatsapp-link">
         <i class="bi bi-whatsapp me-2"></i> chama no Zap!
     </a>
+    <p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO DE <span id="new-text"></span></p>
 
     <script>
         // Função para calcular a distância entre duas coordenadas usando a fórmula Haversine
@@ -72,10 +73,14 @@
                     // Atualiza o atributo href do link do WhatsApp
                     var whatsappLink = $('#whatsapp-link');
                     var currentHref = whatsappLink.attr('href');
-                    var newText = 'Quero fazer um orçamento de materiais para construção em ' + locationName;
+                    var newText = 'Quero fazer um orçamento de materiais para construção em ' + locationName;                   
                     var encodedText = encodeURIComponent(newText);
                     var updatedHref = 'https://api.whatsapp.com/send/?phone=%2B5511975478774&text=' + encodedText + '&type=phone_number&app_absent=0';
                     whatsappLink.attr('href', updatedHref);
+
+                    //var newText2 = '<p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO de ' + locationName;'</p>'
+                    //var newText = 'Quero fazer um orçamento de materiais para construção em ' + locationName;
+                    $('#new-text').text(locationName);
 
                     // Verifica a distância entre as coordenadas do usuário e as coordenadas de referência
                     checkDistance(latitude, longitude);
@@ -105,10 +110,10 @@
 
             if (distance <= 10) {
                 // O usuário está dentro do raio de 10 km
-                $('#region').text('Você está na Região Central de São Paulo.');
+                $('#region').text('O usuário está dentro do raio de 10 km');
             } else {
                 // O usuário está fora do raio de 10 km
-                $('#region').text('Você está fora da Região Central de São Paulo.');
+                $('#region').text('O usuário está fora do raio de 10 km');
             }
         }
     </script>
