@@ -15,9 +15,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            var locationName = "Nome da Região"; // Substitua pelo valor real
-            var html = '<p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO de ${locationName}</p>';
-            $('.my-div').html(html);
+            // Função para obter as coordenadas do navegador
+            function getCoordinates() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showCoordinates);
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            }
+
+            // Função para exibir as coordenadas
+            function showCoordinates(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                // Substitua "Nome do Subúrbio" pelo nome real do subúrbio
+                var suburbName = "Nome do Subúrbio";
+                var html = `<p class="lead2 text-white mb-4 my-div">Latitude: ${latitude}<br>Longitude: ${longitude}<br>Subúrbio: ${suburbName}</p>`;
+                $('.my-div').html(html);
+            }
+
+            // Chamar a função para obter as coordenadas
+            getCoordinates();
         });
     </script>
 </head>

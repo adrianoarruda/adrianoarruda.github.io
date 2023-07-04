@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Localização e Região</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv.min.js"></script>
+</head>
+<body>
+    <div id="location"></div>
+    <div id="coordinates"></div>
+    <div id="region"></div>
+
+    <a class="btn btn-whats btn-lg px-4 me-sm-3" href="" id="whatsapp-link">
+        <i class="bi bi-whatsapp me-2"></i> chama no Zap!
+    </a>
+
+    <script>
+        // Função para calcular a distância entre duas coordenadas usando a fórmula Haversine
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            var earthRadius = 6371; // Raio médio da Terra em quilômetros
+            var dLat = toRadians(lat2 - lat1);
+            var dLon = toRadians(lon2 - lon1);
+
+            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var distance = earthRadius * c;
+
+            return distance;
+        }
+
+        // Função auxiliar para converter graus em radianos
+        function toRadians(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+
+        // Coordenadas do ponto de referência
+        var referenceLatitude = -23.523428248133943;
+        var referenceLongitude = -46.71005351781241;
+
+        // Obtém o nome da localização com base nas coordenadas
+        function getLocationName(latitude, longitude) {
+            var url = 'https://nominatim.openstreetmap.org/reverse?lat=' + latitude + '&lon=' + longitude + '&format=json';
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var suburb = data.address.suburb || '';
+                    var city = data.address.city || '';
+                    var state = data.address.state || '';
+
+                    var locationName = suburb;
+                    if (suburb && city) {
+                        locationName += ', ';
+                    }
+                    if (city) {
+                        locationName += city;
+                    }
+                    if ((suburb || city) && state) {
+                        locationName += ', ';
+                    }
+                    if (state) {
+                        locationName += state;
+                    }
+
+                    $('#location').text('Você está em: ' + locationName);
+
+                    // Atualiza o atributo href do link do WhatsApp
+                    var whatsappLink = $('#whatsapp-link');
+                    var currentHref = whatsappLink.attr('href');
+                    var newText = 'Quero fazer um orçamento de materiais para construção em ' + locationName;
+                    var encodedText = encodeURIComponent(newText);
+                    var updatedHref = 'https://api.whatsapp.com/send/?phone=%2B5511975478774&text=' + encodedText + '&type=phone_number&app_absent=0';
+                    whatsappLink.attr('href', updatedHref);
+
+                    // Verifica a distância entre as coordenadas do
