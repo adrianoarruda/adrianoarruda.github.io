@@ -21,12 +21,22 @@
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
-                    var street = data.address.road || '';
-                    var neighborhood = data.address.neighbourhood || '';
+                    var suburb = data.address.suburb || '';
+                    var city = data.address.city || '';
+                    var state = data.address.state || '';
 
-                    var locationName = street;
-                    if (neighborhood) {
-                        locationName += ', ' + neighborhood;
+                    var locationName = suburb;
+                    if (suburb && city) {
+                        locationName += ', ';
+                    }
+                    if (city) {
+                        locationName += city;
+                    }
+                    if ((suburb || city) && state) {
+                        locationName += ', ';
+                    }
+                    if (state) {
+                        locationName += state;
                     }
 
                     $('#location').text('Você está em: ' + locationName);
