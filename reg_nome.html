@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Localização</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="location"></div>
+
+    <script>
+        // Coordenadas do ponto de referência
+        var referenceLatitude = -23.523428248133943;
+        var referenceLongitude = -46.71005351781241;
+
+        // Obtém o nome da localização com base nas coordenadas
+        function getLocationName(latitude, longitude) {
+            var url = 'https://nominatim.openstreetmap.org/reverse?lat=' + latitude + '&lon=' + longitude + '&format=json';
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var street = data.address.road || '';
+                    var neighborhood = data.address.neighbourhood || '';
+
+                    var locationName = street;
+                    if (neighborhood) {
+                        locationName += ', ' + neighborhood;
+                    }
+
+                    $('#location').text('Você está em: ' + locationName);
+                },
+                error: function (error) {
+                    console.log('Erro ao obter a localização: ' + error.statusText);
+                }
+            });
+        }
+
+        // Obtém a localização do usuário usando a geolocalização do navegador
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatitude = position.coords.latitude;
+                var userLongitude = position.coords.longitude;
+
+                getLocationName(userLatitude, userLongitude);
+            });
+        } else {
+            console.log('Geolocalização não é suportada pelo seu navegador.');
+        }
+    </script>
+</body>
+</html>
