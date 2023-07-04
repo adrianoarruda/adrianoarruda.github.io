@@ -8,7 +8,7 @@
     <div id="location"></div>
 
     <a class="btn btn-whats btn-lg px-4 me-sm-3" href="https://api.whatsapp.com/send/?phone=%2B5511975478774&text=&type=phone_number&app_absent=0" id="whatsapp-link">
-        <i class="bi bi-whatsapp me-2"></i> chama no Zap!
+        <i class="bi bi-whatsapp me-2"></i> ---chama no Zap!
     </a>
 
     <script>
@@ -47,9 +47,8 @@
 
                     // Atualiza o atributo data-text do link do WhatsApp
                     var whatsappLink = $('#whatsapp-link');
-                    var currentHref = whatsappLink.attr('href');
-                    var newText = 'Quero fazer um orçamento de materiais para construção em ' + locationName;
-                    whatsappLink.attr('href', currentHref + encodeURIComponent(newText));
+                    var currentText = whatsappLink.attr('data-text');
+                    whatsappLink.attr('data-text', currentText + locationName);
                 },
                 error: function (error) {
                     console.log('Erro ao obter a localização: ' + error.statusText);
