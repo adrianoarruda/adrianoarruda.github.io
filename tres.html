@@ -3,7 +3,7 @@
 <head>
     <title>Verificar Localização e Região</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 </head>
 <body>
     <div id="location"></div>
@@ -77,4 +77,40 @@
                     var updatedHref = 'https://api.whatsapp.com/send/?phone=%2B5511975478774&text=' + encodedText + '&type=phone_number&app_absent=0';
                     whatsappLink.attr('href', updatedHref);
 
-                    // Verifica a distância entre as coordenadas do
+                    // Verifica a distância entre as coordenadas do usuário e as coordenadas de referência
+                    checkDistance(latitude, longitude);
+                },
+                error: function (error) {
+                    console.log('Erro ao obter a localização: ' + error.statusText);
+                }
+            });
+        }
+
+        // Obtém a localização do usuário usando a geolocalização do navegador
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatitude = position.coords.latitude;
+                var userLongitude = position.coords.longitude;
+
+                $('#coordinates').text('Coordenadas: ' + userLatitude + ', ' + userLongitude);
+                getLocationName(userLatitude, userLongitude);
+            });
+        } else {
+            console.log('Geolocalização não é suportada pelo seu navegador.');
+        }
+
+        // Verifica a distância entre as coordenadas do usuário e as coordenadas de referência
+        function checkDistance(userLatitude, userLongitude) {
+            var distance = calculateDistance(referenceLatitude, referenceLongitude, userLatitude, userLongitude);
+
+            if (distance <= 10) {
+                // O usuário está dentro do raio de 10 km
+                $('#region').text('Você está na Região Central de São Paulo.');
+            } else {
+                // O usuário está fora do raio de 10 km
+                $('#region').text('Você está fora da Região Central de São Paulo.');
+            }
+        }
+    </script>
+</body>
+</html>
