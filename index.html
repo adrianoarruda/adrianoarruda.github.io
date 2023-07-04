@@ -163,57 +163,60 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-    // Função para calcular a distância entre duas coordenadas usando a fórmula Haversine
-    function calculateDistance(lat1, lon1, lat2, lon2) {
-        var earthRadius = 6371; // Raio médio da Terra em quilômetros
-        var dLat = toRadians(lat2 - lat1);
-        var dLon = toRadians(lon2 - lon1);
+<div id="location"></div>
 
-        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    <script>
+        // Coordenadas do ponto de referência
+        var referenceLatitude = -23.523428248133943;
+        var referenceLongitude = -46.71005351781241;
 
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var distance = earthRadius * c;
+        // Obtém o nome da localização com base nas coordenadas
+        function getLocationName(latitude, longitude) {
+            var url = 'https://nominatim.openstreetmap.org/reverse?lat=' + latitude + '&lon=' + longitude + '&format=json';
 
-        return distance;
-    }
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var suburb = data.address.suburb || '';
+                    var city = data.address.city || '';
+                    var state = data.address.state || '';
 
-    // Função auxiliar para converter graus em radianos
-    function toRadians(degrees) {
-        return degrees * (Math.PI / 180);
-    }
+                    var locationName = suburb;
+                    if (suburb && city) {
+                        locationName += ', ';
+                    }
+                    if (city) {
+                        locationName += city;
+                    }
+                    if ((suburb || city) && state) {
+                        locationName += ', ';
+                    }
+                    if (state) {
+                        locationName += state;
+                    }
 
-    // Coordenadas do ponto de referência
-    var referenceLatitude = -23.523428248133943;
-    var referenceLongitude = -46.71005351781241;
-
-    // Verifica a distância entre as coordenadas do usuário e as coordenadas de referência
-    function checkDistance(userLatitude, userLongitude) {
-        var distance = calculateDistance(referenceLatitude, referenceLongitude, userLatitude, userLongitude);
-
-        if (distance <= 10) {
-            // O usuário está dentro do raio de 10 km
-            console.log('Você está dentro do raio de 10 km.');
-        } else {
-            // O usuário está fora do raio de 10 km
-            console.log('Você está fora do raio de 10 km.');
+                    $('#location').text('Você está em: ' + locationName);
+                },
+                error: function (error) {
+                    console.log('Erro ao obter a localização: ' + error.statusText);
+                }
+            });
         }
-    }
 
-    // Obtém a localização do usuário usando a geolocalização do navegador
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var userLatitude = position.coords.latitude;
-            var userLongitude = position.coords.longitude;
+        // Obtém a localização do usuário usando a geolocalização do navegador
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatitude = position.coords.latitude;
+                var userLongitude = position.coords.longitude;
 
-            checkDistance(userLatitude, userLongitude);
-        });
-    } else {
-        console.log('Geolocalização não é suportada pelo seu navegador.');
-    }
-</script>       
+                getLocationName(userLatitude, userLongitude);
+            });
+        } else {
+            console.log('Geolocalização não é suportada pelo seu navegador.');
+        }
+    </script>  
 
             
             
