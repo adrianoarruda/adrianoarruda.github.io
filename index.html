@@ -43,15 +43,17 @@
 
                         <div class="text-center my-5">
                             <h1 class="display-1 fw-bolder text-white mb-2">ENTREGA RÁPIDA</h1>  
-                             <!--<p class="lead2 text-white mb-4">E COM FRETE GRÁTIS NA REGIÃO </p>-->                         
+                            <!--<p class="lead2 text-white mb-4">E COM FRETE GRÁTIS NA REGIÃO </p>-->                         
                             <script>
                                 $(document).ready(function() {
-                                    var html = '<p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO de ${locationName}</p>';
+                                    var locationName = "Nome da Região"; // Substitua pelo valor real
+                                    var html = `<p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO de ${locationName}</p>`;
                                     $('.my-div').html(html);                                
                                 });
                             </script>
                             <p class="lead3 text-white mb-4">Cimento • Areia • Pedra • Argamassa • Tintas • Hidráulica • Elétrica • Madeira •  Portas • Batentes</p>
                         </div>
+                        
                         
                         
                             <!-- Botão exibido apenas em dispositivos móveis -->
