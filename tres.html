@@ -9,6 +9,8 @@
     <div id="location"></div>
     <div id="coordinates"></div>
     <div id="region"></div>
+    <div id="permission-status"></div> <!-- Elemento para exibir o status da permissão -->
+
 
     <a class="btn btn-whats btn-lg px-4 me-sm-3" href="" id="whatsapp-link">
         <i class="bi bi-whatsapp me-2"></i> chama no Zap!
@@ -116,6 +118,41 @@
                 $('#region').text('O usuário está fora do raio de 10 km');
             }
         }
+
+        // Função para verificar se a permissão de geolocalização foi concedida
+        function checkGeolocationPermission() {
+            if (navigator.permissions) {
+                navigator.permissions.query({ name: 'geolocation' }).then(function (permissionStatus) {
+                    var status = permissionStatus.state;
+
+                    if (status === "granted") {
+                        // Permissão concedida
+                        $('#permission-status').text('Permissão de geolocalização concedida.');
+                    } else {
+                        // Permissão negada ou ainda não solicitada
+                        $('#permission-status').text('Permissão de geolocalização negada ou ainda não solicitada.');
+                    }
+                }).catch(function (error) {
+                    // O navegador não suporta o objeto permissions
+                    $('#permission-status').text('Navegador não suporta o objeto permissions.');
+                });
+            } else if (navigator.geolocation) {
+                // Navegador não suporta o objeto permissions, mas suporta geolocalização
+                $('#permission-status').text('Navegador não suporta o objeto permissions, mas suporta geolocalização.');
+            } else {
+                // Navegador não suporta geolocalização
+                $('#permission-status').text('Geolocalização não é suportada pelo seu navegador.');
+            }
+        }
+
+        // Aguardar 5 segundos antes de fazer a verificação da permissão
+        setTimeout(function () {
+            checkGeolocationPermission();
+        }, 5000);
+
+        // Restante do seu código...
+
+    
     </script>
 </body>
 </html>
