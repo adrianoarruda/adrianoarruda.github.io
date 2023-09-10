@@ -189,69 +189,6 @@
 
 
 
-<div id="location"></div>
-
-<script>
-    // Coordenadas do ponto de referência
-    var referenceLatitude = -23.523428248133943;
-    var referenceLongitude = -46.71005351781241;
-
-    // Obtém o nome da localização com base nas coordenadas
-    function getLocationName(latitude, longitude) {
-        var url = 'https://nominatim.openstreetmap.org/reverse?lat=' + latitude + '&lon=' + longitude + '&format=json';
-
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                var suburb = data.address.suburb || '';
-                var city = data.address.city || '';
-                var state = data.address.state || '';
-
-                var locationName = suburb;
-                if (suburb && city) {
-                    locationName += ', ';
-                }
-                if (city) {
-                    locationName += city;
-                }
-                if ((suburb || city) && state) {
-                    locationName += ', ';
-                }
-                if (state) {
-                    locationName += state;
-                }
-
-                $('#location').text('Você está em: ' + locationName);
-
-                // Atualiza o atributo href do link do WhatsApp
-                var whatsappLink = $('#whatsapp-link');
-                var currentHref = whatsappLink.attr('href');
-                var newText = 'Quero fazer um orçamento de materiais para construção em ' + locationName;
-                var encodedText = encodeURIComponent(newText);
-                var updatedHref = 'https://api.whatsapp.com/send/?phone=%2B5511975478774&text=' + encodedText + '&type=phone_number&app_absent=0';
-                whatsappLink.attr('href', updatedHref);
-            },
-            error: function (error) {
-                console.log('Erro ao obter a localização: ' + error.statusText);
-            }
-        });
-    }
-
-    // Obtém a localização do usuário usando a geolocalização do navegador
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var userLatitude = position.coords.latitude;
-            var userLongitude = position.coords.longitude;
-
-            getLocationName(userLatitude, userLongitude);
-        });
-    } else {
-        console.log('Geolocalização não é suportada pelo seu navegador.');
-    }
-</script>
-
             
             
     </body>
