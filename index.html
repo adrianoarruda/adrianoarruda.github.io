@@ -1,222 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Alfredo Madeiras. Loja de materiais para construção na Lapa, Zona Oeste de São Paulo" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Alfredo Madeiras. Loja de materiais para construção na Lapa, Zona Oeste de São Paulo" />
     <meta name="author" content="" />
-    <title>Alfredo Madeiras</title>
+    <title>Alfredo Madeiras | Loja de Materiais para Construção</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-        /* Estilo para o botão WhatsApp */
-        .btn-whatsapp {
-            position: fixed;
-            bottom: 20px; /* Defina a posição vertical desejada */
-            right: 20px; /* Defina a posição horizontal desejada */
-            z-index: 1000; /* Garante que o botão fique acima de outros elementos */
-            opacity: 0; /* Inicialmente, deixe-o transparente para que não seja visível */
-            transition: opacity 0.3s ease-in-out; /* Adiciona uma transição suave */
+        /* Estilize o container para ter um overflow horizontal */
+        .card-container {
+            overflow-x: scroll;
+            white-space: nowrap;
         }
-        
-        /* Estilo para o mapa do Google */
-        .google-maps {
-            max-width: 100%; /* Define a largura máxima para evitar a barra de rolagem lateral */
+
+        /* Estilize os cartões */
+        .card {
+            display: inline-block;
+            margin-right: 10px;
+            /* Espaço entre os cartões */
+        }
+
+        /* Defina a cor personalizada do WhatsApp */
+        .btn-whatsapp {
+            background-color: #25d366;
+            /* Cor personalizada do WhatsApp */
+            color: white !important;
+            /* Cor do texto do botão (importante para forçar a cor) */
+            text-decoration: none;
+            /* Remova sublinhado padrão do link */
+            display: inline-block;
+            /* Transforme em elemento de bloco para controlar largura e altura */
+            padding: 0.5rem 1rem;
+            /* Ajuste o espaçamento interno */
+            border-radius: 0.25rem;
+            /* Adicione cantos arredondados */
+            margin-right: 0;
+            /* Remova o margin-right */
+        }
+
+        .btn-whatsapp:hover {
+            /* Remova a propriedade background-color aqui */
+        }
+
+        /* Ajuste a cor do ícone do WhatsApp para combinar com a cor do botão */
+        .bi-whatsapp {
+            color: #25d366;
+            /* Cor personalizada do WhatsApp */
+        }
+
+
+        /* Estilos para a barra inferior */
+        #bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #25d366;
+            /* Cor de fundo do WhatsApp */
+            display: none;
+            /* Oculta inicialmente */
+            padding: 5px 5px 5px 5px;
+            z-index: 2;
+        }
+
+        .btn-phone,
+        .btn-whatsapp {
+            background-color: #25d366;
+            /* Cor personalizada do WhatsApp */
+            color: white !important;
+            /* Cor do texto do botão (importante para forçar a cor) */
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 0px;
+        }
+
+
+        .btn-phone {
+            background-color: #007bff;
+            /* Cor de fundo do telefone */
+        }
+
+        /* Estilo personalizado para as imagens na versão desktop */
+        .desktop-image {
+            width: 100%;
+            /* Ajuste o tamanho desejado */
+            max-width: 400px;
+            /* Largura máxima */
+            height: auto;
+            /* Altura automática mantendo a proporção */
+        }
+
+        /* Espaçamento vertical entre as imagens no desktop */
+        .desktop-image-container {
+            padding-top: 20px;
+            /* Ajuste o espaçamento conforme necessário */
         }
     </style>
+
 </head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KV15GBJG9"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-3KV15GBJG9');
-        </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3KV15GBJG9"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3KV15GBJG9');
+</script>
+
 <body>
-        
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#!">
-                    <i class="bi bi-house me-2"></i> Alfredo Madeiras
-                </a>
-                
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="bg-image py-5_2 vh-100 d-flex align-items-center">  
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
-                        
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom-blue">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand bi bi-house me-2 text-white" href="">&nbsp;Alfredo Madeiras</a>
+            <!--<button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                            </ul>
+                        </li>
+                    </ul>-->
 
-                        <div class="text-center my-5" style="margin-top:1em !important;">
-                            <h1 class="display-1 fw-bolder text-white mb-2">ENTREGA RÁPIDA</h1>  
-                            <p class="lead2 text-white mb-4 my-div">E COM FRETE GRÁTIS NA REGIÃO </p>
-            
-                            <p class="lead3 text-white mb-4">Cimento • Areia • Pedra • Argamassa • Tintas • Hidráulica • Elétrica • Madeira •  Portas • Batentes</p>
-                        </div>
-                        
-                        
-                        
-                            <!-- Botão exibido apenas em dispositivos móveis -->
-<!-- <a class="btn btn-whats btn-lg px-4 d-block d-md-none" href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o">
-    <i class="bi bi-whatsapp me-2"></i> Chama no Zap! -->
-    <a class="btn btn-whats btn-lg px-4 me-sm-3 d-block d-sm-none" style="line-height: normal" href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" id="whatsapp-link">
-        <i class="bi bi-whatsapp me-2"></i> Fale com nossos vendedores
-    </a><br /> 
-    
-    <!-- Código QR exibido em desktops -->
-    <div class="container d-none d-sm-block text-center">
-        <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" target="_blank">
-            <img src="assets/images/qr_code.png" width="200" height="200"></a><br /><br />
-            <span class="text-white"> ou ligue: 11 9 4580.5252 </span>
-    </div>
-    
- 
-
-    
-
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>    
-
-      
- 
-   <!-- Botão do WhatsApp (exibido apenas em dispositivos móveis) -->
- <!-- Botão do WhatsApp -->
- <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" class="btn2 btn-whatsapp d-flex align-items-center justify-content-center d-md-none btn-block" target="_blank">
-    <i class="bi bi-whatsapp me-2"></i> Fale com nossos vendedores
-</a>
-
-      
-  <section class="feature-section py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h2>Bem-vindo(a) à Alfredo Madeiras!</h2>
-          <p>Somos a sua loja de materiais para construção na Lapa. Oferecemos produtos de grandes marcas a preços competitivos, com atendimento personalizado e entrega imediata, sem custo de frete.</p>
-          <p>Na Alfredo Madeiras, você encontrará uma ampla variedade de produtos, desde itens básicos como cimento, areia e tijolos, até materiais como madeira, porta e batente.</p>
-          <p>Fale conosco pelo WhatsApp ou visite nossa loja na Lapa hoje mesmo e descubra como podemos transformar o seu projeto de construção em realidade!</p>
         </div>
-       <div class="col-lg-6">
-          <!-- Google Maps embed -->
-          <div class="px-5 google-maps">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2454105630723!2d-46.71266062499294!3d-23.523674178825704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef889f2840001%3A0xad80c14cd90ebfb8!2sAlfredo%20Madeiras%20-%20Materiais%20para%20Constru%C3%A7%C3%A3o!5e0!3m2!1sen!2sbr!4v1688422361510!5m2!1sen!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>          
+    </nav>
+    <!-- Header-->
+    <header class="bg-custom-alf py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Vai construir ou reformar?</h1>
+                <p class="lead fw-light text-light mb-0">Entrega imediata e frete grátis na região é com o Alfredão.</p>
+                <br />
+                <p class="lead fw-normal text-white-50 mb-0">Solicite um orçamento</p>
+                <div class="d-flex justify-content-center align-items-center mt-3">
+                    <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" target="_blank"
+                        class="bi bi-whatsapp btn-whatsapp">&nbsp;WhatsApp</a>
+                    <div class="d-flex align-items-center">
+                        <span class="mx-2">ou</span>
+                    </div>
+                    <a href="tel:945805252" class="btn btn-outline-light">
+                        <i class="bi bi-telephone me-2"></i>11 9.4580.5252
+                    </a>
+                </div>
 
-  <div class="py-5 container-fluid bg-dark">
-    <a class="btn btn-whats btn-lg px-4 me-sm-3 d-block d-sm-none" href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" id="whatsapp-link">
-        <i class="bi bi-whatsapp me-2"></i> Fale com nossos vendedores
-    </a>
-    
-  </div>
-          
-       
-        <!-- Testimonials section-->
-        <section class="border-bottom">
-            <div class="container px-5 my-5 px-5">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bolder">Depoimentos de clientes</h2>
-                    <p class="lead mb-0">Nossos clientes adoram trabalhar conosco</p>
-                </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6">
-                    <!-- Testimonial 1-->
-                        <div class="card mb-4">
-                            <div class="card-body p-4">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><img src="assets/images/testimonial1.png" alt="Imagem de depoimento" class="testimonial-image"></div>
-                                    <div class="ms-4">
-                                        <p class="mb-1">Tem tudo para sua construção, bom atendimento e aberto para negociar 👏🏻👏🏻</p>
-                                        <div class="small text-muted">- Jorge Gondo</div>
-                        </div>
-                    </div>
-                </div>
             </div>
-                         <!-- Testimonial 1-->
-                         <div class="card mb-4">
-                            <div class="card-body p-4">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><img src="assets/images/testimonial2.png" alt="Imagem de depoimento" class="testimonial-image"></div>
-                                    <div class="ms-4">
-                                        <p class="mb-1">Gratificante, pois já o conheço a uns 30 anos e sempre te atende com muita alegria
-                                        </p>
-                                        <div class="small text-muted">- Thomaz Telles</div>
-                        </div>
-                    </div>
+
+        </div>
+    </header>
+    <!-- Section-->
+    <div class="container mt-4">
+        <div class="text-center">
+            <h3 class="custom-blue"><b>Produtos que você encontra</b> no Alfredo Madeiras</h3>
+        </div>
+        <div class="card-container mt-3">
+            <div class="card">
+                <img src="assets/card-telhas.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Telhas</h5>
+                    <p class="card-text">Telhas e Coberturas</p>
                 </div>
             </div>
             <div class="card">
-                <div class="card-body p-4">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0"><img src="assets/images/testimonial3.png" alt="Imagem de depoimento" class="testimonial-image"></div>
-                        <div class="ms-4">
-                            <p class="mb-1">Compro tudo com eles, simpáticos e tem tudo.
-                            </p>
-                            <div class="small text-muted">- Canal Mãe de Noiva</div>
+                <img src="assets/card-calhas.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Calhas</h5>
+                    <p class="card-text">Calhas e Acessórios</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/card-madeiras.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Madeiras</h5>
+                    <p class="card-text">Madeiras em geral</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/card-cimento.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Cimentos</h5>
+                    <p class="card-text">Cimentos e Argamassas</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/card-blocos.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Blocos</h5>
+                    <p class="card-text">Blocos e Tijolos</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/card-areia.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Areia</h5>
+                    <p class="card-text">Areia, Pedra e Gesso</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/card-caixa-dagua.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Caixa d'Água</h5>
+                    <p class="card-text">Diversas marcas</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/cards-tubos.jpg" class="img-fluid" alt="Imagem de Exemplo">
+                <div class="card-body">
+                    <h5 class="card-title">Tubos e Conexões</h5>
+                    <p class="card-text">Tubos e Canos</p>
+                </div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" class="text-dark">
+                <div class="card">
+                    <img src="assets/card-mais.svg" width="105" class="img-fluid m-5" alt="Imagem de Exemplo">
+                    <div class="card-body">
+                        <h5 class="card-title">E muito mais</h5>
+                        <p class="card-text">Faça um orçamento</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Adicione mais cartões conforme necessário -->
+        </div>
+    </div>
+    <!-- Carrossel-->
+    <div class="container mt-5 py-4 custom-bg-gray">
+        <div class="text-center">
+            <h3 class="custom-blue">Como receber seu <b>material de construção</b></h3>
+        </div>
+
+        <!-- Carrossel para telas menores (Mobile) -->
+        <div id="mobileCarousel" class="carousel slide d-md-none" data-bs-pause="hover">
+            <!-- Slides do carrossel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- <div class="d-flex flex-column align-items-center">
+                            <a href="https://api.whatsapp.com/send?phone=SEU-NUMERO-DE-TELEFONE" target="_blank">
+                                <img src="caminho-para-a-imagem-do-whatsapp.png" alt="WhatsApp" width="50" height="50" class="rounded-circle">
+                            </a>
+                            <p class="mx-5 text-center">Comece conversando com o Alfredão pelo WhatsApp ou Telefone para solicitar um orçamento personalizado.</p>
+                        </div> -->
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-3 fw-bold">1</span>
+                        </div>
+                        <p class="mx-5 text-center">Comece conversando com o Alfredão pelo WhatsApp ou Telefone para
+                            solicitar um orçamento personalizado.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-3 fw-bold">2</span>
+                        </div>
+                        <p class="mx-5 text-center">Quando estiver satisfeito com o orçamento, confirme o endereço de
+                            entrega para que possamos levar os materiais até você.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-3 fw-bold">3</span>
+                        </div>
+                        <p class="mx-5 text-center">No mesmo dia, os seus materiais serão entregues diretamente no local
+                            desejado, e o melhor de tudo: o frete é GRÁTIS!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-3 fw-bold">4</span>
+                        </div>
+                        <p class="mx-5 text-center">Conte sempre com a nossa equipe para tornar a sua experiência de
+                            compra fácil e agradável! 😊</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setas de navegação -->
+            <a class="carousel-control-prev" href="#mobileCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#mobileCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </a>
+        </div>
+
+        <!-- Grid para telas maiores (Desktop) -->
+        <div class="d-none d-md-block mt-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-6 fw-bold">1</span>
+                        </div>
+                        <p class="mx-5 text-center">Comece conversando com o Alfredão pelo WhatsApp ou Telefone para
+                            solicitar um orçamento personalizado.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-6 fw-bold">2</span>
+                        </div>
+                        <p class="mx-5 text-center">Quando estiver satisfeito com o orçamento, confirme o endereço de
+                            entrega para que possamos levar os materiais até você.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-6 fw-bold">3</span>
+                        </div>
+                        <p class="mx-5 text-center">No mesmo dia, os seus materiais serão entregues diretamente no local
+                            desejado, e o melhor de tudo: o frete é GRÁTIS!</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
+                            style="width: 50px; height: 50px;">
+                            <span class="display-6 fw-bold">4</span>
+                        </div>
+                        <p class="mx-5 text-center">Conte sempre com a nossa equipe para tornar a sua experiência de
+                            compra fácil e agradável! 😊</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        
-         
-        <!-- Footer-->
-        <footer class="py-3 bg-dark text-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p class="m-0">Alfredo Madeiras</p>
-                        <p class="m-0 text-white-50">R. Albion, 570 - Lapa, São Paulo - SP, 05077-130</p>
-                    </div>
-                    <div class="col-lg-6 text-lg-end">
-                        <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" class="text-white me-3"><i class="bi bi-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/alfredomadeiras/" class="text-white"><i class="bi bi-instagram"></i></a>
+    <!-- Marcas-->
+    <div class="container bg py-5">
+        <h2 class="text-center custom-blue">Nossos <b>parceiros</b></h2>
+        <!-- Carrossel para telas menores (Mobile) -->
+        <div id="mobileCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="3000">
+            <!-- Slides do carrossel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-tigre.png" alt="Imagem 1" class="img-fluid border">
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-votorantim.png" alt="Imagem 2" class="img-fluid border">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-coral.png" alt="Imagem 3" class="img-fluid border">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-vedacit.png" alt="Imagem 4" class="img-fluid border">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-sil.png" alt="Imagem 5" class="img-fluid border">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-quartzolit.png" alt="Imagem 6" class="img-fluid border">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-suvinil.png" alt="Imagem 7" class="img-fluid border">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/logo-fortlev.png" alt="Imagem 8" class="img-fluid border">
+                    </div>
+                </div>
             </div>
-        </footer>
-        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        </div>
 
-        <!-- Hotjar Tracking Code for alfredomadeiras.com.br -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:55661,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-        
+        <!-- Grade com 4 colunas para desktops -->
+        <div class="row d-none d-sm-flex">
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-tigre.png" alt="Imagem 1" class="desktop-image border">
+            </div>
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-votorantim.png" alt="Imagem 2" class="desktop-image border">
+            </div>
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-coral.png" alt="Imagem 3" class="desktop-image border">
+            </div>
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-vedacit.png" alt="Imagem 4" class="desktop-image border">
+            </div>
+        </div>
+
+        <!-- Carrossel adicional para desktops -->
+        <div class="row d-none d-sm-flex">
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-sil.png" alt="Imagem 5" class="desktop-image border">
+            </div>
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-quartzolit.png" alt="Imagem 6" class="desktop-image border">
+            </div>
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-suvinil.png" alt="Imagem 6" class="desktop-image border">
+            </div>
+            <div class="col-md-3 text-center desktop-image-container">
+                <img src="assets/logo-fortlev.png" alt="Imagem 6" class="desktop-image border">
+            </div>
+        </div>
+    </div>
+    <div class="container bg pb-5">
+        <h2 class="text-center custom-blue"><b>Bairros atendidos</b> em São Paulo</h2>
+        <ul class="list-group mt-3">
+            <li class="list-group-item">Pinheiros</li>
+            <li class="list-group-item">Barra Funda</li>
+            <li class="list-group-item">Butantã</li>
+            <li class="list-group-item">Itaim Bibi</li>
+            <li class="list-group-item">Vila Jaguara</li>
+            <li class="list-group-item">Jaguaré</li>
+            <li class="list-group-item">Jardim Paulista</li>
+            <li class="list-group-item">Lapa</li>
+            <li class="list-group-item">Morumbi</li>
+            <li class="list-group-item">Perdizes</li>
+            <li class="list-group-item">Rio Pequeno</li>
+            <li class="list-group-item">Vila Leopoldina</li>
+        </ul>
+    </div>
+    <!-- Barra inferior -->
+    <div id="bottom-bar">
+        <div class="d-flex justify-content-center align-items-center m-2">
+            <span class="text-light me-auto">Solicite um orçamento:</span>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" target="_blank"
+                class="bi bi-whatsapp btn btn-whatsapp" style="border: 1px solid white;">&nbsp;WhatsApp</a>
+        </div>
 
 
-            
-    </body>
+    </div>
+    <!-- Footer-->
+    <footer class="bg-custom-blue" style="padding-bottom:6rem !important">
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <p class="m-0 text-white-50">
+                        Rua Albion, 570 - Lapa -
+                        São Paulo - SP
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center" style="display: flex; justify-content: center;">
+                    <a href="tel:945805252" style="text-decoration:none;"><span class="text-white me-3">11
+                            9.4580.5252</span>
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o"><span
+                                class="bi bi-whatsapp text-white me-3"></spam></a>
+                        <a href="https://www.instagram.com/alfredomadeiras/" class="text-white"><span
+                                class="bi bi-instagram"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+        // Detectar a rolagem da página
+        window.addEventListener("scroll", function () {
+            var bottomBar = document.getElementById("bottom-bar");
+
+            // Ajuste o valor abaixo para definir a altura de início da barra
+            var alturaDeInicio = window.innerHeight - 400; // Por exemplo, inicia a 200 pixels do fundo
+
+            // Verificar se a rolagem atingiu a altura de início da barra
+            if (window.scrollY > alturaDeInicio) {
+                bottomBar.style.display = "block"; // Mostrar a barra
+            } else {
+                bottomBar.style.display = "none"; // Ocultar a barra
+            }
+        });
+    </script>
+    <!-- Hotjar Tracking Code for alfredomadeiras.com.br -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 55661, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</body>
 </html>
