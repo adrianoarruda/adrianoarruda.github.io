@@ -3,375 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adriano Arruda - Digital Analytics | BI | Insights</title>
-    
-    <!-- Font Awesome para Ícones -->
+    <title>Dashboard de Carreira - Adriano Arruda</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* Importando a fonte Roboto */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' );
-
-        :root {
-            --primary-color: #0d6efd; /* Azul do Bootstrap */
-            --dark-color: #212529;
-            --light-gray-color: #f8f9fa;
-            --text-color: #384347;
-            --text-muted-color: #6c757d;
-            --border-color: #dee2e6;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
-        }
-
-        /* Coluna da Esquerda (Sidebar) */
-        .sidebar {
-            width: 35%;
-            background-color: var(--light-gray-color);
-            padding: 40px;
-            box-sizing: border-box;
-        }
-
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 30px auto;
-            display: block;
-            border: 5px solid #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .sidebar h2 {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--dark-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .sidebar h2 i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar li {
-            margin-bottom: 15px;
-        }
-
-        .sidebar strong {
-            display: block;
-            font-size: 1em;
-            font-weight: 500;
-            color: var(--dark-color);
-            margin-bottom: 4px;
-        }
-
-        .sidebar span, .sidebar p {
-            font-size: 0.9em;
-            color: var(--text-muted-color);
-        }
-        
-        .contact-links a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-color);
-            margin-bottom: 15px;
-            font-size: 0.95em;
-            transition: color 0.3s;
-        }
-        .contact-links a:hover {
-            color: var(--primary-color);
-        }
-        .contact-links i {
-            font-size: 1.4em;
-            width: 30px;
-            text-align: center;
-            margin-right: 10px;
-            color: var(--text-muted-color);
-        }
-
-        /* Coluna da Direita (Conteúdo Principal) */
-        .main-content {
-            width: 65%;
-            padding: 50px;
-            box-sizing: border-box;
-        }
-
-        .header h1 {
-            font-size: 3em;
-            margin: 0 0 5px 0;
-            font-weight: 700;
-            color: var(--dark-color);
-            line-height: 1.2;
-        }
-
-        .header .subtitle {
-            font-size: 1.3em;
-            font-weight: 300;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-        }
-
-        .main-content h2 {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: var(--dark-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-top: 40px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .main-content h2 i {
-            margin-right: 12px;
-            color: var(--primary-color);
-        }
-
-        .main-content p {
-            font-size: 1em;
-            color: var(--text-color);
-        }
-
-        .job {
-            margin-bottom: 30px;
-            padding-left: 25px;
-            border-left: 3px solid var(--border-color);
-        }
-        
-        .job:hover {
-            border-left-color: var(--primary-color);
-        }
-
-        .job-title {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-        }
-
-        .job-meta {
-            font-size: 0.9em;
-            color: var(--text-muted-color);
-            font-weight: 500;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .job ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .job ul li {
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-        
-        .job ul li strong {
-            font-weight: 500;
-            color: var(--dark-color);
-        }
-
-        /* Responsividade para Celulares */
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar, .main-content {
-                width: 100%;
-            }
-            .main-content {
-                padding: 40px 30px;
-            }
-            .header h1 {
-                font-size: 2.5em;
-            }
-        }
-        
-        /* Estilos para Impressão */
-        @media print {
-            body { background-color: #fff; padding: 0; }
-            .container { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
-            .sidebar { background-color: #f8f9fa !important; }
-            a { color: var(--text-color) !important; text-decoration: none; }
-            .job:hover { border-left-color: var(--border-color); }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Coluna da Esquerda -->
-        <aside class="sidebar">
-            <img src="https://raw.githubusercontent.com/adrianoarruda/adrianoarruda/main/1703709381951.jpg" alt="Foto de Adriano Arruda" class="profile-pic">
-            
-            <section class="contact-section">
-                <h2><i class="fas fa-address-book"></i>Contato</h2>
-                <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/adrianoarruda" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>/in/adrianoarruda</span>
-                    </a>
-                    <a href="https://github.com/adrianoarruda" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>/adrianoarruda</span>
-                    </a>
-                    <p style="display: flex; align-items: center; font-size: 0.95em; color: var(--text-color );">
-                        <i class="fas fa-map-marker-alt" style="font-size: 1.4em; width: 30px; text-align: center; margin-right: 10px; color: var(--text-muted-color);"></i>
-                        <span>São Paulo, SP, Brasil</span>
-                    </p>
-                </div>
-            </section>
+    <aside class="sidebar">
+        <!-- CABEÇALHO DO MENU ATUALIZADO -->
+        <div class="sidebar-header profile-card">
+            <img src="https://raw.githubusercontent.com/adrianoarruda/adrianoarruda/main/1703709381951.jpg" alt="Foto de Adriano Arruda" class="profile-pic-small">
+            <div class="profile-info">
+                <h5>Adriano Arruda</h5>
+                <p>Profissional de Dados</p>
+            </div>
+        </div>
 
-            <section>
-                <h2><i class="fas fa-cogs"></i>Competências</h2>
-                <ul>
-                    <li>
-                        <strong>Linguagens & Bancos de Dados:</strong>
-                        <span>SQL, Python, R, DAX, JavaScript, CSS, HTML</span>
-                    </li>
-                    <li>
-                        <strong>Ferramentas de BI & Analytics:</strong>
-                        <span>Power BI, Looker Studio, Google Analytics, GTM, Hotjar</span>
-                    </li>
-                    <li>
-                        <strong>Plataformas de Dados (Cloud):</strong>
-                        <span>Databricks, BigQuery, Oracle, Hive, Teradata</span>
-                    </li>
-                    <li>
-                        <strong>Áreas de Atuação:</strong>
-                        <span>Business Intelligence, Data Analytics, Data Science, Engenharia de Dados, Produtos Digitais, Otimização de Conversão (CRO)</span>
-                    </li>
-                </ul>
-            </section>
+        <div class="menu-group">
+            <p class="menu-group-title">Menu Principal</p>
+            <a href="index.html" class="menu-item active"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="experiencia.html" class="menu-item"><i class="fas fa-briefcase"></i>Experiência</a>
+            <a href="competencias.html" class="menu-item"><i class="fas fa-star"></i>Competências</a>
+            <a href="formacao.html" class="menu-item"><i class="fas fa-graduation-cap"></i>Formação</a>
+        </div>
+        <div class="menu-group">
+            <p class="menu-group-title">Resumo Rápido</p>
+            <div class="widget" style="padding: 15px; border-color: var(--success-color ); background-color: #f0fdf4;">
+                <p style="font-size: 0.8em; font-weight: 500; color: var(--text-muted-color);">Anos de Experiência</p>
+                <p style="font-size: 1.5em; font-weight: 700; color: var(--dark-color); margin: 0;">18+</p>
+            </div>
+            <div class="widget" style="padding: 15px; margin-top: 10px; border-color: var(--warning-color); background-color: #fffbeb;">
+                <p style="font-size: 0.8em; font-weight: 500; color: var(--text-muted-color);">Áreas de Especialização</p>
+                <p style="font-size: 1.5em; font-weight: 700; color: var(--dark-color); margin: 0;">6</p>
+            </div>
+        </div>
+        <!-- RODAPÉ DO MENU REMOVIDO -->
+    </aside>
 
-            <section>
-                <h2><i class="fas fa-graduation-cap"></i>Formação</h2>
-                <ul>
-                    <li>
-                        <strong>Pós-Graduação em Gestão e Estratégia em Comércio Eletrônico</strong>
-                        <span>BSP - Business School São Paulo (2014 – 2015)</span>
-                    </li>
-                    <li>
-                        <strong>Graduação em Design de Publicidade</strong>
-                        <span>Escola Panamericana de Arte e Design (2005 – 2007)</span>
-                    </li>
-                    <li>
-                        <strong>Superior em Propaganda e Marketing</strong>
-                        <span>Universidade Paulista (2001 – 2004)</span>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-certificate"></i>Certificações</h2>
-                <ul>
-                    <li><p>Mineração de Dados (USP/Esalq)</p></li>
-                    <li><p>CSPO (Certified Scrum Product Owner)</p></li>
-                    <li><p>Google Adwords</p></li>
-                    <li><p>IBM Watson Commerce</p></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-globe"></i>Idiomas</h2>
-                <ul>
-                    <li>
-                        <strong>Inglês:</strong>
-                        <span>Avançado / Profissional</span>
-                    </li>
-                </ul>
-            </section>
-        </aside>
-
-        <!-- Coluna da Direita -->
-        <main class="main-content">
-            <header class="header">
-                <h1>Adriano Arruda</h1>
-                <div class="subtitle">Digital Analytics | Business Intelligence | Data Science</div>
-            </header>
-
-            <section>
-                <h2><i class="fas fa-user-alt"></i>Resumo Profissional</h2>
-                <p>Profissional com ampla experiência em Business Intelligence, Analytics e Data Science, atuando em projetos nos setores financeiro, de e-commerce e consumo. Especialista em análise, modelagem e visualização de dados, transformo grandes volumes de informações em insights estratégicos que aceleram a tomada de decisão e impulsionam o desenvolvimento de produtos digitais. Entusiasta de Inteligência Artificial aplicada a negócios, combino sólida base técnica com visão estratégica, aliada a vivência em marketing digital e CRO, o que amplia minha capacidade de conectar dados a resultados concretos.</p>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-briefcase"></i>Experiência Profissional</h2>
-                
-                <div class="job">
-                    <span class="job-title">Digital Analytics | BI | Insights</span>
-                    <span class="job-meta">Bradesco | Osasco, SP | Maio 2022 – Presente</span>
-                    <ul>
-                        <li>Desenvolvimento de análises avançadas e visualizações em Power BI e Looker Studio, consolidando KPIs estratégicos para áreas de negócio.</li>
-                        <li>Criação de estudos em Python (Databricks) para integrar múltiplas fontes de dados, acelerando o processo decisório e a identificação de oportunidades.</li>
-                        <li>Atuação como parceiro estratégico, conectando dados a decisões que otimizam a jornada do cliente e aprimoram produtos digitais.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <span class="job-title">Digital Analytics</span>
-                    <span class="job-meta">MATH (Cliente: Santander) | São Paulo, SP | Maio 2021 – Abril 2022</span>
-                    <ul>
-                        <li>Estruturação de dashboard de custos que trouxe visibilidade inédita sobre o Oracle Responsys, permitindo análise de custo por disparo e <strong>otimização dos dias de envio para maximizar ROI</strong>.</li>
-                        <li>Automação de pipelines no Google Cloud Platform (BigQuery, Cloud Functions), garantindo escalabilidade e precisão no processamento de dados de engajamento.</li>
-                        <li>Implementação de automações em Python para relatórios de performance, <strong>reduzindo tempo operacional da equipe e eliminando falhas manuais</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <span class="job-title">Especialista CRO & Digital Analytics</span>
-                    <span class="job-meta">Jüssi (Clientes: O Boticário, Localiza, Diageo) | São Paulo, SP | Jul 2018 – Abr 2021</span>
-                    <ul>
-                        <li>Liderança em projetos de CRO para o e-commerce de O Boticário, com <strong>ganho acumulado de 12% na taxa de conversão</strong> através de testes A/B e otimizações de UX.</li>
-                        <li>Estruturação e implementação de Data Layer via GTM para clientes como Localiza, aumentando a precisão da coleta de dados e melhorando a performance de campanhas de remarketing.</li>
-                    </ul>
-                </div>
-                
-                 <div class="job">
-                    <span class="job-title">Coordenador de Growth Marketing</span>
-                    <span class="job-meta">Catho Online | Barueri, SP | Jan 2017 – Jul 2018</span>
-                    <ul>
-                        <li>Coordenação de equipe multidisciplinar (UX, Front-end, Back-end, SEO) focada em estratégias de Growth, implementando metodologias de experimentação para otimização de canais e aquisição.</li>
-                    </ul>
-                </div>
-                
-            </section>
-        </main>
-    </div>
+    <main class="main-content">
+        <header class="page-header">
+            <div>
+                <h2>Olá, bem-vindo! 👋</h2>
+                <p>Este é o dashboard interativo da minha carreira.</p>
+            </div>
+            <a href="https://www.linkedin.com/in/adrianoarruda" target="_blank" class="btn-primary"><i class="fab fa-linkedin"></i>Ver LinkedIn</a>
+        </header>
+        <div class="widget summary-card">
+            <p>Resumo Profissional</p>
+            <div class="summary-value">Especialista em Dados & Analytics</div>
+            <p>Ampla experiência em transformar dados em insights estratégicos, conectando análise técnica com resultados de negócio.</p>
+        </div>
+        <div class="grid-container grid-cols-3">
+            <div class="widget info-card">
+                <div class="info-card-content"><p class="label">Hard Skills</p><p class="value">10+ Tecnologias</p></div>
+                <i class="fas fa-code info-card-icon icon-success"></i>
+            </div>
+            <div class="widget info-card">
+                <div class="info-card-content"><p class="label">Soft Skills</p><p class="value">6 Competências</p></div>
+                <i class="fas fa-users info-card-icon icon-warning"></i>
+            </div>
+            <div class="widget info-card">
+                <div class="info-card-content"><p class="label">Resultado Chave</p><p class="value">+12% Conversão</p></div>
+                <i class="fas fa-chart-line info-card-icon icon-danger"></i>
+            </div>
+        </div>
+        <div class="widget">
+            <h3 class="widget-title"><span><i class="fas fa-bullseye"></i> Principais Áreas de Atuação</span></h3>
+            <div class="soft-skills-list">
+                <span><i class="fas fa-lightbulb"></i>Resolução de Problemas</span>
+                <span><i class="fas fa-comments"></i>Comunicação Estratégica</span>
+                <span><i class="fas fa-sitemap"></i>Visão de Negócio</span>
+                <span><i class="fas fa-users-cog"></i>Liderança de Equipes</span>
+                <span><i class="fas fa-handshake"></i>Gestão de Stakeholders</span>
+                <span><i class="fas fa-chart-line"></i>Pensamento Analítico</span>
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 </html>

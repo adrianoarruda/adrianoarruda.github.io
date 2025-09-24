@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competências - Adriano Arruda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <!-- CABEÇALHO DO MENU ATUALIZADO -->
+        <div class="sidebar-header profile-card">
+            <img src="https://raw.githubusercontent.com/adrianoarruda/adrianoarruda/main/1703709381951.jpg" alt="Foto de Adriano Arruda" class="profile-pic-small">
+            <div class="profile-info">
+                <h5>Adriano Arruda</h5>
+                <p>Profissional de Dados</p>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <p class="menu-group-title">Menu Principal</p>
+            <a href="index.html" class="menu-item"><i class="fas fa-home"></i>Dashboard</a>
+            <a href="experiencia.html" class="menu-item"><i class="fas fa-briefcase"></i>Experiência</a>
+            <a href="competencias.html" class="menu-item active"><i class="fas fa-star"></i>Competências</a>
+            <a href="formacao.html" class="menu-item"><i class="fas fa-graduation-cap"></i>Formação</a>
+        </div>
+        <div class="menu-group">
+            <p class="menu-group-title">Resumo Rápido</p>
+            <div class="widget" style="padding: 15px; border-color: var(--success-color ); background-color: #f0fdf4;">
+                <p style="font-size: 0.8em; font-weight: 500; color: var(--text-muted-color);">Anos de Experiência</p>
+                <p style="font-size: 1.5em; font-weight: 700; color: var(--dark-color); margin: 0;">18+</p>
+            </div>
+            <div class="widget" style="padding: 15px; margin-top: 10px; border-color: var(--warning-color); background-color: #fffbeb;">
+                <p style="font-size: 0.8em; font-weight: 500; color: var(--text-muted-color);">Áreas de Especialização</p>
+                <p style="font-size: 1.5em; font-weight: 700; color: var(--dark-color); margin: 0;">6</p>
+            </div>
+        </div>
+        <!-- RODAPÉ DO MENU REMOVIDO -->
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div>
+                <h2>Competências Técnicas e Comportamentais</h2>
+                <p>Uma visão geral das minhas habilidades e como elas evoluíram.</p>
+            </div>
+        </header>
+        <div class="widget">
+            <h3 class="widget-title">
+                <span><i class="fas fa-chart-bar"></i>Evolução de Competências</span>
+                <div class="range-slider" style="max-width: 200px;">
+                    <input type="range" id="year-slider" min="2006" max="2024" value="2024" step="1">
+                    <span id="year-label">2024</span>
+                </div>
+            </h3>
+            <div id="skills-chart-container"></div>
+        </div>
+        <div class="widget">
+            <h3 class="widget-title"><span><i class="fas fa-code"></i>Hard Skills (Ferramentas & Tecnologias)</span></h3>
+            <ul>
+                <li><strong>Linguagens & Bancos de Dados:</strong><div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">DAX</span><span class="tag">JavaScript</span></div></li>
+                <li><strong>Ferramentas de BI & Analytics:</strong><div class="tags"><span class="tag">Power BI</span><span class="tag">Looker Studio</span><span class="tag">Google Analytics</span><span class="tag">GTM</span><span class="tag">Hotjar</span></div></li>
+                <li><strong>Plataformas de Dados (Cloud):</strong><div class="tags"><span class="tag">Databricks</span><span class="tag">BigQuery</span><span class="tag">Oracle</span><span class="tag">Hive</span><span class="tag">Teradata</span></div></li>
+            </ul>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
