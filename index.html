@@ -5,639 +5,373 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adriano Arruda - Digital Analytics | BI | Insights</title>
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Importando a fonte Roboto */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' );
+
+        :root {
+            --primary-color: #0d6efd; /* Azul do Bootstrap */
+            --dark-color: #212529;
+            --light-gray-color: #f8f9fa;
+            --text-color: #384347;
+            --text-muted-color: #6c757d;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+        }
+
+        /* Coluna da Esquerda (Sidebar) */
+        .sidebar {
+            width: 35%;
+            background-color: var(--light-gray-color);
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px auto;
+            display: block;
+            border: 5px solid #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar h2 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar strong {
+            display: block;
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--dark-color);
+            margin-bottom: 4px;
+        }
+
+        .sidebar span, .sidebar p {
+            font-size: 0.9em;
+            color: var(--text-muted-color);
+        }
+        
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        .contact-links a:hover {
+            color: var(--primary-color);
+        }
+        .contact-links i {
+            font-size: 1.4em;
+            width: 30px;
+            text-align: center;
+            margin-right: 10px;
+            color: var(--text-muted-color);
+        }
+
+        /* Coluna da Direita (Conteúdo Principal) */
+        .main-content {
+            width: 65%;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0 0 5px 0;
+            font-weight: 700;
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .main-content h2 {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-content h2 i {
+            margin-right: 12px;
+            color: var(--primary-color);
+        }
+
+        .main-content p {
+            font-size: 1em;
+            color: var(--text-color);
+        }
+
+        .job {
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 3px solid var(--border-color);
+        }
+        
+        .job:hover {
+            border-left-color: var(--primary-color);
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .job-meta {
+            font-size: 0.9em;
+            color: var(--text-muted-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .job ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .job ul li {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        
+        .job ul li strong {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar, .main-content {
+                width: 100%;
+            }
+            .main-content {
+                padding: 40px 30px;
+            }
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+        
+        /* Estilos para Impressão */
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .container { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+            .sidebar { background-color: #f8f9fa !important; }
+            a { color: var(--text-color) !important; text-decoration: none; }
+            .job:hover { border-left-color: var(--border-color); }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Adriano Arruda</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Início</a>
+    <div class="container">
+        <!-- Coluna da Esquerda -->
+        <aside class="sidebar">
+            <img src="https://raw.githubusercontent.com/adrianoarruda/adrianoarruda/main/1703709381951.jpg" alt="Foto de Adriano Arruda" class="profile-pic">
+            
+            <section class="contact-section">
+                <h2><i class="fas fa-address-book"></i>Contato</h2>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/adrianoarruda" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        <span>/in/adrianoarruda</span>
+                    </a>
+                    <a href="https://github.com/adrianoarruda" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>/adrianoarruda</span>
+                    </a>
+                    <p style="display: flex; align-items: center; font-size: 0.95em; color: var(--text-color );">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.4em; width: 30px; text-align: center; margin-right: 10px; color: var(--text-muted-color);"></i>
+                        <span>São Paulo, SP, Brasil</span>
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-cogs"></i>Competências</h2>
+                <ul>
+                    <li>
+                        <strong>Linguagens & Bancos de Dados:</strong>
+                        <span>SQL, Python, R, DAX, JavaScript, CSS, HTML</span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre</a>
+                    <li>
+                        <strong>Ferramentas de BI & Analytics:</strong>
+                        <span>Power BI, Looker Studio, Google Analytics, GTM, Hotjar</span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experiência</a>
+                    <li>
+                        <strong>Plataformas de Dados (Cloud):</strong>
+                        <span>Databricks, BigQuery, Oracle, Hive, Teradata</span>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Competências</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Formação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
+                    <li>
+                        <strong>Áreas de Atuação:</strong>
+                        <span>Business Intelligence, Data Analytics, Data Science, Engenharia de Dados, Produtos Digitais, Otimização de Conversão (CRO)</span>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </nav>
+            </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6 order-lg-2">
-                    <div class="text-center">
-                        <img src="assets/images/profile.jpg" alt="Adriano Arruda" class="profile-img img-fluid rounded-circle shadow-lg">
-                    </div>
+            <section>
+                <h2><i class="fas fa-graduation-cap"></i>Formação</h2>
+                <ul>
+                    <li>
+                        <strong>Pós-Graduação em Gestão e Estratégia em Comércio Eletrônico</strong>
+                        <span>BSP - Business School São Paulo (2014 – 2015)</span>
+                    </li>
+                    <li>
+                        <strong>Graduação em Design de Publicidade</strong>
+                        <span>Escola Panamericana de Arte e Design (2005 – 2007)</span>
+                    </li>
+                    <li>
+                        <strong>Superior em Propaganda e Marketing</strong>
+                        <span>Universidade Paulista (2001 – 2004)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-certificate"></i>Certificações</h2>
+                <ul>
+                    <li><p>Mineração de Dados (USP/Esalq)</p></li>
+                    <li><p>CSPO (Certified Scrum Product Owner)</p></li>
+                    <li><p>Google Adwords</p></li>
+                    <li><p>IBM Watson Commerce</p></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-globe"></i>Idiomas</h2>
+                <ul>
+                    <li>
+                        <strong>Inglês:</strong>
+                        <span>Avançado / Profissional</span>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Coluna da Direita -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Adriano Arruda</h1>
+                <div class="subtitle">Digital Analytics | Business Intelligence | Data Science</div>
+            </header>
+
+            <section>
+                <h2><i class="fas fa-user-alt"></i>Resumo Profissional</h2>
+                <p>Profissional com ampla experiência em Business Intelligence, Analytics e Data Science, atuando em projetos nos setores financeiro, de e-commerce e consumo. Especialista em análise, modelagem e visualização de dados, transformo grandes volumes de informações em insights estratégicos que aceleram a tomada de decisão e impulsionam o desenvolvimento de produtos digitais. Entusiasta de Inteligência Artificial aplicada a negócios, combino sólida base técnica com visão estratégica, aliada a vivência em marketing digital e CRO, o que amplia minha capacidade de conectar dados a resultados concretos.</p>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-briefcase"></i>Experiência Profissional</h2>
+                
+                <div class="job">
+                    <span class="job-title">Digital Analytics | BI | Insights</span>
+                    <span class="job-meta">Bradesco | Osasco, SP | Maio 2022 – Presente</span>
+                    <ul>
+                        <li>Desenvolvimento de análises avançadas e visualizações em Power BI e Looker Studio, consolidando KPIs estratégicos para áreas de negócio.</li>
+                        <li>Criação de estudos em Python (Databricks) para integrar múltiplas fontes de dados, acelerando o processo decisório e a identificação de oportunidades.</li>
+                        <li>Atuação como parceiro estratégico, conectando dados a decisões que otimizam a jornada do cliente e aprimoram produtos digitais.</li>
+                    </ul>
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="hero-content">
-                        <h1 class="display-4 fw-bold text-primary mb-3">Adriano Arruda</h1>
-                        <h2 class="h3 text-secondary mb-4">Digital Analytics | BI | Insights</h2>
-                        <p class="lead mb-4">Profissional apaixonado por dados, inovação e tecnologia, com sólida experiência na interseção de Marketing Digital, Business Intelligence e Ciência de Dados. Especialista em alavancar dados para impulsionar decisões estratégicas e otimizar resultados de negócio. Proficiente em todo o ciclo de vida dos dados, desde a coleta e engenharia até a análise avançada, visualização e ativação de insights acionáveis. Experiência prática com ferramentas de ponta e linguagens de programação para transformar grandes volumes de dados em valor tangível.</p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-envelope me-2"></i>Entre em Contato
-                            </a>
-                            <a href="#about" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-user me-2"></i>Saiba Mais
-                            </a>
-                        </div>
-                        <div class="hero-info mt-4">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i>São Paulo, SP</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="mb-2"><i class="fas fa-phone text-primary me-2"></i>(11) 97547-8774</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="job">
+                    <span class="job-title">Digital Analytics</span>
+                    <span class="job-meta">MATH (Cliente: Santander) | São Paulo, SP | Maio 2021 – Abril 2022</span>
+                    <ul>
+                        <li>Estruturação de dashboard de custos que trouxe visibilidade inédita sobre o Oracle Responsys, permitindo análise de custo por disparo e <strong>otimização dos dias de envio para maximizar ROI</strong>.</li>
+                        <li>Automação de pipelines no Google Cloud Platform (BigQuery, Cloud Functions), garantindo escalabilidade e precisão no processamento de dados de engajamento.</li>
+                        <li>Implementação de automações em Python para relatórios de performance, <strong>reduzindo tempo operacional da equipe e eliminando falhas manuais</strong>.</li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5">Sobre Mim</h2>
+                <div class="job">
+                    <span class="job-title">Especialista CRO & Digital Analytics</span>
+                    <span class="job-meta">Jüssi (Clientes: O Boticário, Localiza, Diageo) | São Paulo, SP | Jul 2018 – Abr 2021</span>
+                    <ul>
+                        <li>Liderança em projetos de CRO para o e-commerce de O Boticário, com <strong>ganho acumulado de 12% na taxa de conversão</strong> através de testes A/B e otimizações de UX.</li>
+                        <li>Estruturação e implementação de Data Layer via GTM para clientes como Localiza, aumentando a precisão da coleta de dados e melhorando a performance de campanhas de remarketing.</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="about-content">
-                        <p class="lead text-center mb-4">Profissional apaixonado por dados, inovação e tecnologia, com sólida experiência na interseção de Marketing Digital, Business Intelligence e Ciência de Dados. Especialista em alavancar dados para impulsionar decisões estratégicas e otimizar resultados de negócio. Proficiente em todo o ciclo de vida dos dados, desde a coleta e engenharia até a análise avançada, visualização e ativação de insights acionáveis. Experiência prática com ferramentas de ponta e linguagens de programação para transformar grandes volumes de dados em valor tangível.</p>
-                        
-                        <div class="row mt-5">
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-chart-line text-primary me-2"></i>Business Intelligence & Analytics</h5>
-                                    <p>Google Analytics, Supermetrics, Sales Force, Google Sheet, Excel, BigQuery, GTM, Data Studio, Power BI, Hotjar, Google Optimize. Expertise em CRO e produtos digitais, garantindo que a tomada de decisão seja orientada por dados e gerando insights para equipes de marketing, desenvolvimento e UX.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-brain text-primary me-2"></i>Ciência de Dados & Machine Learning</h5>
-                                    <p>Aplicação de Aprendizado de Máquina para otimização de processos. Experiência em análise exploratória de dados, identificação de padrões e tendências. (Aprofundar com exemplos de projetos ou algoritmos se houver).</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-database text-primary me-2"></i>Engenharia de Dados</h5>
-                                    <p>Construção e gerenciamento de pipelines de dados, manutenção de bases de dados e APIs para extração, ingestão e transporte de dados. Ingestão, transformação e disponibilização de dados de engajamento no Google Cloud (GCP) utilizando BigQuery, Cloud Functions, Storage e Dataprep. Conhecimento em Azure Databricks.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-code text-primary me-2"></i>Programação & Bancos de Dados</h5>
-                                    <p>Python (automação e otimização de processos de dados), SQL (consultas complexas e manipulação de dados), Google Sheets Query, JavaScript.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-chart-bar text-primary me-2"></i>Visualização de Dados</h5>
-                                    <p>Desenvolvimento de Dashboards interativos utilizando DataStudio e Power BI para comunicação eficaz de insights.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-cogs text-primary me-2"></i>Otimização & Testes</h5>
-                                    <p>Experiência em Teste A/B, estudo de comportamento do usuário, mapa de calor, clique e rolagem, e insights por vídeos de navegação para otimização de conversão.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-language text-primary me-2"></i>Idiomas</h5>
-                                    <p>Inglês (Profissional Completo)</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <h5><i class="fas fa-certificate text-primary me-2"></i>Certificações</h5>
-                                    <p>CSPO, Google Adwords, IBM Watson Commerce - Sales Mastery v2</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
+                 <div class="job">
+                    <span class="job-title">Coordenador de Growth Marketing</span>
+                    <span class="job-meta">Catho Online | Barueri, SP | Jan 2017 – Jul 2018</span>
+                    <ul>
+                        <li>Coordenação de equipe multidisciplinar (UX, Front-end, Back-end, SEO) focada em estratégias de Growth, implementando metodologias de experimentação para otimização de canais e aquisição.</li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5">Experiência Profissional</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="timeline">
-                        <!-- Bradesco -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Digital Analytics | BI | Insights</h5>
-                                                <h6 class="card-subtitle text-muted">Bradesco</h6>
-                                            </div>
-                                            <span class="badge bg-primary">maio 2022 - Presente</span>
-                                        </div>
-                                        <p class="card-text">Osasco, São Paulo, Brasil</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Liderança e execução de estratégias de Digital Analytics e Business Intelligence, fornecendo insights acionáveis para a tomada de decisão em um ambiente corporativo complexo.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Atuação na vanguarda da análise de dados para otimizar performance digital e impulsionar o crescimento do negócio.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- MATH -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Digital Analytics</h5>
-                                                <h6 class="card-subtitle text-muted">MATH</h6>
-                                            </div>
-                                            <span class="badge bg-primary">maio 2021 - abril 2022</span>
-                                        </div>
-                                        <p class="card-text">São Paulo, São Paulo, Brasil</p>
-                                        <p class="card-text"><strong>Cliente:</strong> Santander</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Participação ativa na construção e gerenciamento de pipelines de dados robustos, garantindo a integridade e disponibilidade de dados para análises críticas.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Manutenção de bases de dados e APIs para extração, ingestão e transporte eficiente de grandes volumes de dados.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Liderança na ingestão, transformação e disponibilização de dados de engajamento de ambientes digitais e mídias no Google Cloud Platform (GCP), utilizando BigQuery, Cloud Functions, Storage e Dataprep.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Desenvolvimento de Dashboards dinâmicos e intuitivos utilizando DataStudio e BigQuery, facilitando a visualização e interpretação de métricas de performance.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Utilização de Python para automação e otimização de processos de dados, resultando em maior eficiência operacional e redução de erros.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Jüssi -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Especialista CRO & Digital Analytics</h5>
-                                                <h6 class="card-subtitle text-muted">Jüssi</h6>
-                                            </div>
-                                            <span class="badge bg-primary">julho 2018 - abril 2021</span>
-                                        </div>
-                                        <p class="card-text">São Paulo e Região, Brasil</p>
-                                        <p class="card-text"><strong>Clientes:</strong> O Boticário, Localiza e Diageo</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Responsável por garantir que a tomada de decisão de negócio fosse orientada por dados, fornecendo insights estratégicos para equipes de marketing, desenvolvimento e UX.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Planejamento e implementação de Data Layers (Web Analytics) e Track Events para coleta de dados precisos e relevantes.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Criação e manutenção de Solution Design References (SDR) para padronização e otimização da coleta de dados.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Condução de estudos aprofundados de comportamento do usuário, incluindo pontos de abandono, interação, mapas de calor, cliques, rolagem e vídeos de navegação, para identificar oportunidades de otimização.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Implementação de tags em Google Tag Manager (GTM) e execução de Testes A/B para otimização da experiência do usuário e aumento de conversão.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Catho - Growth Marketing -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Coordenador Growth Marketing</h5>
-                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
-                                            </div>
-                                            <span class="badge bg-primary">janeiro 2017 - julho 2018</span>
-                                        </div>
-                                        <p class="card-text">Barueri, São Paulo, Brasil</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Coordenação de equipe multidisciplinar (UX Designer, Front End, Back End, SEO e Conteúdo) focada em estratégias de Growth Marketing.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Implementação de metodologias de experimentos para otimização de canais e estratégias de marketing, com foco em aquisição e melhorias de produto.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Catho - Agência Interna -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Coordenador Agência Interna</h5>
-                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
-                                            </div>
-                                            <span class="badge bg-primary">setembro 2012 - dezembro 2016</span>
-                                        </div>
-                                        <p class="card-text">Barueri, São Paulo, Brasil</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Coordenação de projetos de marketing digital (B2C, B2B, Institucional), incluindo negociação com clientes internos e elaboração de cronogramas.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Acompanhamento de campanhas online (CPM, CPC, CPA, Retargeting) e E-mails Marketing, com foco em métricas e monitoramento de resultados.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Gestão do fluxo de jobs internos e suporte à equipe de desenvolvimento.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Catho - Líder da Equipe de Desenvolvimento -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Líder da Equipe de Desenvolvimento</h5>
-                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
-                                            </div>
-                                            <span class="badge bg-primary">outubro 2009 - agosto 2012</span>
-                                        </div>
-                                        <p class="card-text">Barueri, São Paulo, Brasil</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Coordenação de projetos de Front End e Web Design, em colaboração com o time de UX.</li>
-                                            <li><i class="fas fa-check text-success me-2"></i>Responsável pela padronização do site e desenvolvimento da equipe.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Catho - Web Designer Jr a Especialista -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Web Designer Jr a Especialista</h5>
-                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
-                                            </div>
-                                            <span class="badge bg-primary">novembro 2006 - setembro 2009</span>
-                                        </div>
-                                        <p class="card-text">São Paulo Area, Brazil</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Foco em usabilidade e experiência do usuário, desenvolvimento de layouts, criação de Landing Pages, banners e E-mails Marketing.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Analista de marketing digital -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-3">
-                                            <div>
-                                                <h5 class="card-title text-primary">Analista de marketing digital</h5>
-                                                <h6 class="card-subtitle text-muted"></h6>
-                                            </div>
-                                            <span class="badge bg-primary">agosto 2005 - novembro 2006</span>
-                                        </div>
-                                        <p class="card-text">São Paulo, Brasil</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check text-success me-2"></i>Planejamento e gerenciamento de mídia online, acompanhamento de métricas e participação na implementação de Google Analytics e RealMedia.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5">Competências</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="skill-category">
-                                <h5 class="mb-3"><i class="fas fa-chart-line text-primary me-2"></i>Business Intelligence & Analytics</h5>
-                                <div class="skills-list">
-                                    <span class="badge bg-primary me-2 mb-2">Google Analytics</span>
-                                    <span class="badge bg-primary me-2 mb-2">Supermetrics</span>
-                                    <span class="badge bg-primary me-2 mb-2">Sales Force</span>
-                                    <span class="badge bg-primary me-2 mb-2">Google Sheet</span>
-                                    <span class="badge bg-primary me-2 mb-2">Excel</span>
-                                    <span class="badge bg-primary me-2 mb-2">BigQuery</span>
-                                    <span class="badge bg-primary me-2 mb-2">GTM</span>
-                                    <span class="badge bg-primary me-2 mb-2">Data Studio</span>
-                                    <span class="badge bg-primary me-2 mb-2">Power BI</span>
-                                    <span class="badge bg-primary me-2 mb-2">Hotjar</span>
-                                    <span class="badge bg-primary me-2 mb-2">Google Optimize</span>
-                                    <span class="badge bg-primary me-2 mb-2">CRO</span>
-                                    <span class="badge bg-primary me-2 mb-2">Produtos Digitais</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="skill-category">
-                                <h5 class="mb-3"><i class="fas fa-brain text-primary me-2"></i>Ciência de Dados & Machine Learning</h5>
-                                <div class="skills-list">
-                                    <span class="badge bg-success me-2 mb-2">Aprendizado de Máquina</span>
-                                    <span class="badge bg-success me-2 mb-2">Análise Exploratória de Dados</span>
-                                    <span class="badge bg-success me-2 mb-2">Identificação de Padrões</span>
-                                    <span class="badge bg-success me-2 mb-2">Modelagem de Dados</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="skill-category">
-                                <h5 class="mb-3"><i class="fas fa-database text-primary me-2"></i>Engenharia de Dados</h5>
-                                <div class="skills-list">
-                                    <span class="badge bg-info me-2 mb-2">Pipelines de Dados</span>
-                                    <span class="badge bg-info me-2 mb-2">Manutenção de Bases de Dados</span>
-                                    <span class="badge bg-info me-2 mb-2">APIs para Extração</span>
-                                    <span class="badge bg-info me-2 mb-2">Ingestão de Dados</span>
-                                    <span class="badge bg-info me-2 mb-2">Google Cloud Platform (GCP)</span>
-                                    <span class="badge bg-info me-2 mb-2">BigQuery</span>
-                                    <span class="badge bg-info me-2 mb-2">Cloud Functions</span>
-                                    <span class="badge bg-info me-2 mb-2">Storage</span>
-                                    <span class="badge bg-info me-2 mb-2">Dataprep</span>
-                                    <span class="badge bg-info me-2 mb-2">Azure Databricks</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="skill-category">
-                                <h5 class="mb-3"><i class="fas fa-code text-primary me-2"></i>Programação & Bancos de Dados</h5>
-                                <div class="skills-list">
-                                    <span class="badge bg-success me-2 mb-2">Python</span>
-                                    <span class="badge bg-success me-2 mb-2">SQL</span>
-                                    <span class="badge bg-success me-2 mb-2">Google Sheets Query</span>
-                                    <span class="badge bg-success me-2 mb-2">JavaScript</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="skill-category">
-                                <h5 class="mb-3"><i class="fas fa-chart-bar text-primary me-2"></i>Visualização de Dados</h5>
-                                <div class="skills-list">
-                                    <span class="badge bg-warning me-2 mb-2">Data Studio</span>
-                                    <span class="badge bg-warning me-2 mb-2">Power BI</span>
-                                    <span class="badge bg-warning me-2 mb-2">Dashboards Interativos</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="skill-category">
-                                <h5 class="mb-3"><i class="fas fa-cogs text-primary me-2"></i>Otimização & Testes</h5>
-                                <div class="skills-list">
-                                    <span class="badge bg-warning me-2 mb-2">Teste A/B</span>
-                                    <span class="badge bg-warning me-2 mb-2">Comportamento do Usuário</span>
-                                    <span class="badge bg-warning me-2 mb-2">Mapas de Calor</span>
-                                    <span class="badge bg-warning me-2 mb-2">Otimização de Conversão</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5">Formação Acadêmica</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="education-list">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h5 class="card-title text-primary">Pós-Graduação em Gestão e Estratégia em Comércio Eletrônico</h5>
-                                        <h6 class="card-subtitle text-muted">BSP - Business School São Paulo</h6>
-                                    </div>
-                                    <span class="badge bg-primary">2014 - 2015</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h5 class="card-title text-primary">Graduação em Design de Publicidade</h5>
-                                        <h6 class="card-subtitle text-muted">Escola Panamericana de Arte e Design</h6>
-                                    </div>
-                                    <span class="badge bg-primary">2005 - 2007</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <h5 class="card-title text-primary">Superior em Propaganda e Marketing</h5>
-                                        <h6 class="card-subtitle text-muted">Universidade Paulista</h6>
-                                    </div>
-                                    <span class="badge bg-primary">2001 - 2004</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5">Certificações Adicionais e Conhecimentos</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="info-card">
-                                <h5><i class="fas fa-robot text-primary me-2"></i>Aprendizado de Máquina</h5>
-                                <p>Conhecimento em conceitos e aplicação de algoritmos de Machine Learning para resolução de problemas de negócio.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="info-card">
-                                <h5><i class="fas fa-flask text-primary me-2"></i>Teste A/B</h5>
-                                <p>Expertise em planejamento, execução e análise de testes A/B para otimização de performance.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="info-card">
-                                <h5><i class="fas fa-cloud text-primary me-2"></i>Azure Databricks</h5>
-                                <p>Familiaridade com a plataforma para processamento e análise de dados em larga escala.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="info-card">
-                                <h5><i class="fas fa-certificate text-primary me-2"></i>CSPO (Certified Scrum Product Owner)</h5>
-                                <p>Certificação que demonstra compreensão de metodologias ágeis e foco no valor do produto.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="info-card">
-                                <h5><i class="fas fa-ad text-primary me-2"></i>Google Adwords</h5>
-                                <p>Conhecimento em plataformas de publicidade digital.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="info-card">
-                                <h5><i class="fas fa-shopping-cart text-primary me-2"></i>IBM Watson Commerce - Sales Mastery v2</h5>
-                                <p>Certificação em soluções de comércio eletrônico.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-primary text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5 text-white">Entre em Contato</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="contact-info text-center">
-                                <div class="contact-icon mb-3">
-                                    <i class="fas fa-phone fa-2x"></i>
-                                </div>
-                                <h5>Telefone</h5>
-                                <p>(11) 97547-8774</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="contact-info text-center">
-                                <div class="contact-icon mb-3">
-                                    <i class="fas fa-envelope fa-2x"></i>
-                                </div>
-                                <h5>Email</h5>
-                                <p>adriano.arruda@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="contact-info text-center">
-                                <div class="contact-icon mb-3">
-                                    <i class="fas fa-map-marker-alt fa-2x"></i>
-                                </div>
-                                <h5>Localização</h5>
-                                <p>São Paulo, SP, Brasil</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="contact-info text-center">
-                                <div class="contact-icon mb-3">
-                                    <i class="fab fa-linkedin fa-2x"></i>
-                                </div>
-                                <h5>LinkedIn</h5>
-                                <p><a href="https://www.linkedin.com/in/adrianoarruda" target="_blank" class="text-white">linkedin.com/in/adrianoarruda</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>&copy; 2024 Adriano Arruda. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+                
+            </section>
+        </main>
+    </div>
 </body>
 </html>
-
