@@ -1,524 +1,643 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />-->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Alfredo Madeiras. Loja de materiais para construção na Lapa, Zona Oeste de São Paulo" />
-    <meta name="author" content="" />
-    <title>Alfredo Madeiras | Loja de Materiais para Construção</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css?clear" rel="stylesheet" />
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-        /* Estilize o container para ter um overflow horizontal */
-        .card-container {
-            overflow-x: scroll;
-            white-space: nowrap;
-        }
-
-        /* Estilize os cartões */
-        .card {
-            display: inline-block;
-            margin-right: 10px;
-            /* Espaço entre os cartões */
-        }
-
-        /* Defina a cor personalizada do WhatsApp */
-        .btn-whatsapp {
-            background-color: #25d366;
-            /* Cor personalizada do WhatsApp */
-            color: white !important;
-            /* Cor do texto do botão (importante para forçar a cor) */
-            text-decoration: none;
-            /* Remova sublinhado padrão do link */
-            display: inline-block;
-            /* Transforme em elemento de bloco para controlar largura e altura */
-            padding: 0.5rem 1rem;
-            /* Ajuste o espaçamento interno */
-            border-radius: 0.25rem;
-            /* Adicione cantos arredondados */
-            margin-right: 0;
-            /* Remova o margin-right */
-        }
-
-        .btn-whatsapp:hover {
-            /* Remova a propriedade background-color aqui */
-        }
-
-        /* Ajuste a cor do ícone do WhatsApp para combinar com a cor do botão */
-        .bi-whatsapp {
-            color: #25d366;
-            /* Cor personalizada do WhatsApp */
-        }
-
-
-        /* Estilos para a barra inferior */
-        #bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #25d366;
-            /* Cor de fundo do WhatsApp */
-            display: none;
-            /* Oculta inicialmente */
-            padding: 5px 5px 5px 5px;
-            z-index: 2;
-        }
-
-        .btn-phone,
-        .btn-whatsapp {
-            background-color: #25d366;
-            /* Cor personalizada do WhatsApp */
-            color: white !important;
-            /* Cor do texto do botão (importante para forçar a cor) */
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin: 0px;
-        }
-
-
-        .btn-phone {
-            background-color: #007bff;
-            /* Cor de fundo do telefone */
-        }
-
-        /* Estilo personalizado para as imagens na versão desktop */
-        .desktop-image {
-            width: 100%;
-            /* Ajuste o tamanho desejado */
-            max-width: 400px;
-            /* Largura máxima */
-            height: auto;
-            /* Altura automática mantendo a proporção */
-        }
-
-        /* Espaçamento vertical entre as imagens no desktop */
-        .desktop-image-container {
-            padding-top: 20px;
-            /* Ajuste o espaçamento conforme necessário */
-        }
-    </style>
-
+    <title>Adriano Arruda - Digital Analytics | BI | Insights</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3KV15GBJG9"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-3KV15GBJG9');
-</script>
-
 <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-custom-blue">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand bi bi-house me-2 text-white" href="">&nbsp;Alfredo Madeiras</a>
-            <!--<button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
-                    </ul>-->
-
-        </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Adriano Arruda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experiência</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Competências</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Formação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <!-- Header-->
-    <header class="bg-custom-alf py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Vai construir ou reformar?</h1>
-                <p class="lead fw-light text-light mb-0">Entrega imediata e frete grátis na região é com o Alfredão.</p>
-                <br />
-                <p class="lead fw-normal text-white-50 mb-0">Solicite um orçamento</p>
-                <div class="d-flex justify-content-center align-items-center mt-3">
-                    <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" target="_blank"
-                        class="bi bi-whatsapp btn-whatsapp">&nbsp;WhatsApp</a>
-                    <div class="d-flex align-items-center">
-                        <span class="mx-2">ou</span>
-                    </div>
-                    <a href="tel:945805252" class="btn btn-outline-light">
-                        <i class="bi bi-telephone me-2"></i>11 9.4580.5252
-                    </a>
-                </div>
 
-            </div>
-
-        </div>
-    </header>
-    <!-- Section-->
-    <div class="container mt-4">
-        <div class="text-center">
-            <h3 class="custom-blue"><b>Produtos que você encontra</b> no Alfredo Madeiras</h3>
-        </div>
-        <div class="card-container mt-3">
-            <div class="card">
-                <img src="assets/card-telhas.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Telhas</h5>
-                    <p class="card-text">Telhas e Coberturas</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/card-calhas.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Calhas</h5>
-                    <p class="card-text">Calhas e Acessórios</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/card-madeiras.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Madeiras</h5>
-                    <p class="card-text">Madeiras em geral</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/card-cimento.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Cimentos</h5>
-                    <p class="card-text">Cimentos e Argamassas</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/card-blocos.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Blocos</h5>
-                    <p class="card-text">Blocos e Tijolos</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/card-areia.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Areia</h5>
-                    <p class="card-text">Areia, Pedra e Gesso</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/card-caixa-dagua.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Caixa d'Água</h5>
-                    <p class="card-text">Diversas marcas</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/cards-tubos.jpg" class="img-fluid" alt="Imagem de Exemplo">
-                <div class="card-body">
-                    <h5 class="card-title">Tubos e Conexões</h5>
-                    <p class="card-text">Tubos e Canos</p>
-                </div>
-            </div>
-            <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" class="text-dark">
-                <div class="card">
-                    <img src="assets/card-mais.svg" width="105" class="img-fluid m-5" alt="Imagem de Exemplo">
-                    <div class="card-body">
-                        <h5 class="card-title">E muito mais</h5>
-                        <p class="card-text">Faça um orçamento</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="text-center">
+                        <img src="assets/images/profile.jpg" alt="Adriano Arruda" class="profile-img img-fluid rounded-circle shadow-lg">
                     </div>
                 </div>
-            </a>
-            <!-- Adicione mais cartões conforme necessário -->
-        </div>
-    </div>
-    <!-- Carrossel-->
-    <div class="container mt-5 py-4 custom-bg-gray">
-        <div class="text-center">
-            <h3 class="custom-blue">Como receber seu <b>material de construção</b></h3>
-        </div>
-
-        <!-- Carrossel para telas menores (Mobile) -->
-        <div id="mobileCarousel" class="carousel slide d-md-none" data-bs-pause="hover">
-            <!-- Slides do carrossel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- <div class="d-flex flex-column align-items-center">
-                            <a href="https://api.whatsapp.com/send?phone=SEU-NUMERO-DE-TELEFONE" target="_blank">
-                                <img src="caminho-para-a-imagem-do-whatsapp.png" alt="WhatsApp" width="50" height="50" class="rounded-circle">
+                <div class="col-lg-6 order-lg-1">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold text-primary mb-3">Adriano Arruda</h1>
+                        <h2 class="h3 text-secondary mb-4">Digital Analytics | BI | Insights</h2>
+                        <p class="lead mb-4">Profissional apaixonado por dados, inovação e tecnologia, com sólida experiência na interseção de Marketing Digital, Business Intelligence e Ciência de Dados. Especialista em alavancar dados para impulsionar decisões estratégicas e otimizar resultados de negócio. Proficiente em todo o ciclo de vida dos dados, desde a coleta e engenharia até a análise avançada, visualização e ativação de insights acionáveis. Experiência prática com ferramentas de ponta e linguagens de programação para transformar grandes volumes de dados em valor tangível.</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-envelope me-2"></i>Entre em Contato
                             </a>
-                            <p class="mx-5 text-center">Comece conversando com o Alfredão pelo WhatsApp ou Telefone para solicitar um orçamento personalizado.</p>
-                        </div> -->
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-3 fw-bold">1</span>
+                            <a href="#about" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-user me-2"></i>Saiba Mais
+                            </a>
                         </div>
-                        <p class="mx-5 text-center">Comece conversando com o Alfredão pelo WhatsApp ou Telefone para
-                            solicitar um orçamento personalizado.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-3 fw-bold">2</span>
+                        <div class="hero-info mt-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i>São Paulo, SP</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="mb-2"><i class="fas fa-phone text-primary me-2"></i>(11) 97547-8774</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="mx-5 text-center">Quando estiver satisfeito com o orçamento, confirme o endereço de
-                            entrega para que possamos levar os materiais até você.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-3 fw-bold">3</span>
-                        </div>
-                        <p class="mx-5 text-center">No mesmo dia, os seus materiais serão entregues diretamente no local
-                            desejado, e o melhor de tudo: o frete é GRÁTIS!</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-3"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-3 fw-bold">4</span>
-                        </div>
-                        <p class="mx-5 text-center">Conte sempre com a nossa equipe para tornar a sua experiência de
-                            compra fácil e agradável! 😊</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Setas de navegação -->
-            <a class="carousel-control-prev" href="#mobileCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#mobileCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Próximo</span>
-            </a>
         </div>
+    </section>
 
-        <!-- Grid para telas maiores (Desktop) -->
-        <div class="d-none d-md-block mt-3">
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-6 fw-bold">1</span>
-                        </div>
-                        <p class="mx-5 text-center">Comece conversando com o Alfredão pelo WhatsApp ou Telefone para
-                            solicitar um orçamento personalizado.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-6 fw-bold">2</span>
-                        </div>
-                        <p class="mx-5 text-center">Quando estiver satisfeito com o orçamento, confirme o endereço de
-                            entrega para que possamos levar os materiais até você.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-6 fw-bold">3</span>
-                        </div>
-                        <p class="mx-5 text-center">No mesmo dia, os seus materiais serão entregues diretamente no local
-                            desejado, e o melhor de tudo: o frete é GRÁTIS!</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center m-2"
-                            style="width: 50px; height: 50px;">
-                            <span class="display-6 fw-bold">4</span>
-                        </div>
-                        <p class="mx-5 text-center">Conte sempre com a nossa equipe para tornar a sua experiência de
-                            compra fácil e agradável! 😊</p>
-                    </div>
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5">Sobre Mim</h2>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Marcas-->
-    <div class="container bg py-5">
-        <h2 class="text-center custom-blue">Nossos <b>parceiros</b></h2>
-        <!-- Carrossel para telas menores (Mobile) -->
-        <div id="mobileCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Slides do carrossel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-tigre.png" alt="Imagem 1" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-votorantim.png" alt="Imagem 2" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-coral.png" alt="Imagem 3" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-vedacit.png" alt="Imagem 4" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-sil.png" alt="Imagem 5" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-quartzolit.png" alt="Imagem 6" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-suvinil.png" alt="Imagem 7" class="img-fluid border">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex flex-column align-items-center">
-                        <img src="assets/logo-fortlev.png" alt="Imagem 8" class="img-fluid border">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Grade com 4 colunas para desktops -->
-        <div class="row d-none d-sm-flex">
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-tigre.png" alt="Imagem 1" class="desktop-image border">
-            </div>
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-votorantim.png" alt="Imagem 2" class="desktop-image border">
-            </div>
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-coral.png" alt="Imagem 3" class="desktop-image border">
-            </div>
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-vedacit.png" alt="Imagem 4" class="desktop-image border">
-            </div>
-        </div>
-
-        <!-- Carrossel adicional para desktops -->
-        <div class="row d-none d-sm-flex">
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-sil.png" alt="Imagem 5" class="desktop-image border">
-            </div>
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-quartzolit.png" alt="Imagem 6" class="desktop-image border">
-            </div>
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-suvinil.png" alt="Imagem 6" class="desktop-image border">
-            </div>
-            <div class="col-md-3 text-center desktop-image-container">
-                <img src="assets/logo-fortlev.png" alt="Imagem 6" class="desktop-image border">
-            </div>
-        </div>
-    </div>
-    <div class="container bg pb-5">
-        <h2 class="text-center custom-blue"><b>Bairros atendidos</b> em São Paulo</h2>
-        <ul class="list-group mt-3">
-            <li class="list-group-item">Pinheiros</li>
-            <li class="list-group-item">Barra Funda</li>
-            <li class="list-group-item">Butantã</li>
-            <li class="list-group-item">Itaim Bibi</li>
-            <li class="list-group-item">Vila Jaguara</li>
-            <li class="list-group-item">Jaguaré</li>
-            <li class="list-group-item">Jardim Paulista</li>
-            <li class="list-group-item">Lapa</li>
-            <li class="list-group-item">Morumbi</li>
-            <li class="list-group-item">Perdizes</li>
-            <li class="list-group-item">Rio Pequeno</li>
-            <li class="list-group-item">Vila Leopoldina</li>
-        </ul>
-    </div>
-    <!-- Barra inferior -->
-    <div id="bottom-bar">
-        <div class="d-flex justify-content-center align-items-center m-2">
-            <span class="text-light me-auto">Solicite um orçamento:</span>
-            <a href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o" target="_blank"
-                class="bi bi-whatsapp btn btn-whatsapp" style="border: 1px solid white;">&nbsp;WhatsApp</a>
-        </div>
-
-
-    </div>
-    <!-- Footer-->
-    <footer class="bg-custom-blue" style="padding-bottom:6rem !important">
-        <div class="container pt-3">
             <div class="row">
-                <div class="col-lg-6 text-center">
-                    <p class="m-0 text-white-50">
-                        Rua Albion, 570 - Lapa -
-                        São Paulo - SP
-                    </p>
+                <div class="col-lg-8 mx-auto">
+                    <div class="about-content">
+                        <p class="lead text-center mb-4">Profissional apaixonado por dados, inovação e tecnologia, com sólida experiência na interseção de Marketing Digital, Business Intelligence e Ciência de Dados. Especialista em alavancar dados para impulsionar decisões estratégicas e otimizar resultados de negócio. Proficiente em todo o ciclo de vida dos dados, desde a coleta e engenharia até a análise avançada, visualização e ativação de insights acionáveis. Experiência prática com ferramentas de ponta e linguagens de programação para transformar grandes volumes de dados em valor tangível.</p>
+                        
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-chart-line text-primary me-2"></i>Business Intelligence & Analytics</h5>
+                                    <p>Google Analytics, Supermetrics, Sales Force, Google Sheet, Excel, BigQuery, GTM, Data Studio, Power BI, Hotjar, Google Optimize. Expertise em CRO e produtos digitais, garantindo que a tomada de decisão seja orientada por dados e gerando insights para equipes de marketing, desenvolvimento e UX.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-brain text-primary me-2"></i>Ciência de Dados & Machine Learning</h5>
+                                    <p>Aplicação de Aprendizado de Máquina para otimização de processos. Experiência em análise exploratória de dados, identificação de padrões e tendências. (Aprofundar com exemplos de projetos ou algoritmos se houver).</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-database text-primary me-2"></i>Engenharia de Dados</h5>
+                                    <p>Construção e gerenciamento de pipelines de dados, manutenção de bases de dados e APIs para extração, ingestão e transporte de dados. Ingestão, transformação e disponibilização de dados de engajamento no Google Cloud (GCP) utilizando BigQuery, Cloud Functions, Storage e Dataprep. Conhecimento em Azure Databricks.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-code text-primary me-2"></i>Programação & Bancos de Dados</h5>
+                                    <p>Python (automação e otimização de processos de dados), SQL (consultas complexas e manipulação de dados), Google Sheets Query, JavaScript.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-chart-bar text-primary me-2"></i>Visualização de Dados</h5>
+                                    <p>Desenvolvimento de Dashboards interativos utilizando DataStudio e Power BI para comunicação eficaz de insights.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-cogs text-primary me-2"></i>Otimização & Testes</h5>
+                                    <p>Experiência em Teste A/B, estudo de comportamento do usuário, mapa de calor, clique e rolagem, e insights por vídeos de navegação para otimização de conversão.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-language text-primary me-2"></i>Idiomas</h5>
+                                    <p>Inglês (Profissional Completo)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5><i class="fas fa-certificate text-primary me-2"></i>Certificações</h5>
+                                    <p>CSPO, Google Adwords, IBM Watson Commerce - Sales Mastery v2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 text-center" style="display: flex; justify-content: center;">
-                    <a href="tel:945805252" style="text-decoration:none;"><span class="text-white me-3">11
-                            9.4580.5252</span>
-                        <a
-                            href="https://api.whatsapp.com/send/?phone=%2B5511945805252&text=Quero%20fazer%20um%20or%C3%A7amento%20de%20materiais%20para%20constru%C3%A7%C3%A3o"><span
-                                class="bi bi-whatsapp text-white me-3"></spam></a>
-                        <a href="https://www.instagram.com/alfredomadeiras/" class="text-white"><span
-                                class="bi bi-instagram"></span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5">Experiência Profissional</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <!-- Bradesco -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Digital Analytics | BI | Insights</h5>
+                                                <h6 class="card-subtitle text-muted">Bradesco</h6>
+                                            </div>
+                                            <span class="badge bg-primary">maio 2022 - Presente</span>
+                                        </div>
+                                        <p class="card-text">Osasco, São Paulo, Brasil</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Liderança e execução de estratégias de Digital Analytics e Business Intelligence, fornecendo insights acionáveis para a tomada de decisão em um ambiente corporativo complexo.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Atuação na vanguarda da análise de dados para otimizar performance digital e impulsionar o crescimento do negócio.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MATH -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Digital Analytics</h5>
+                                                <h6 class="card-subtitle text-muted">MATH</h6>
+                                            </div>
+                                            <span class="badge bg-primary">maio 2021 - abril 2022</span>
+                                        </div>
+                                        <p class="card-text">São Paulo, São Paulo, Brasil</p>
+                                        <p class="card-text"><strong>Cliente:</strong> Santander</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Participação ativa na construção e gerenciamento de pipelines de dados robustos, garantindo a integridade e disponibilidade de dados para análises críticas.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Manutenção de bases de dados e APIs para extração, ingestão e transporte eficiente de grandes volumes de dados.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Liderança na ingestão, transformação e disponibilização de dados de engajamento de ambientes digitais e mídias no Google Cloud Platform (GCP), utilizando BigQuery, Cloud Functions, Storage e Dataprep.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Desenvolvimento de Dashboards dinâmicos e intuitivos utilizando DataStudio e BigQuery, facilitando a visualização e interpretação de métricas de performance.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Utilização de Python para automação e otimização de processos de dados, resultando em maior eficiência operacional e redução de erros.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jüssi -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Especialista CRO & Digital Analytics</h5>
+                                                <h6 class="card-subtitle text-muted">Jüssi</h6>
+                                            </div>
+                                            <span class="badge bg-primary">julho 2018 - abril 2021</span>
+                                        </div>
+                                        <p class="card-text">São Paulo e Região, Brasil</p>
+                                        <p class="card-text"><strong>Clientes:</strong> O Boticário, Localiza e Diageo</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Responsável por garantir que a tomada de decisão de negócio fosse orientada por dados, fornecendo insights estratégicos para equipes de marketing, desenvolvimento e UX.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Planejamento e implementação de Data Layers (Web Analytics) e Track Events para coleta de dados precisos e relevantes.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Criação e manutenção de Solution Design References (SDR) para padronização e otimização da coleta de dados.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Condução de estudos aprofundados de comportamento do usuário, incluindo pontos de abandono, interação, mapas de calor, cliques, rolagem e vídeos de navegação, para identificar oportunidades de otimização.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Implementação de tags em Google Tag Manager (GTM) e execução de Testes A/B para otimização da experiência do usuário e aumento de conversão.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catho - Growth Marketing -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Coordenador Growth Marketing</h5>
+                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
+                                            </div>
+                                            <span class="badge bg-primary">janeiro 2017 - julho 2018</span>
+                                        </div>
+                                        <p class="card-text">Barueri, São Paulo, Brasil</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Coordenação de equipe multidisciplinar (UX Designer, Front End, Back End, SEO e Conteúdo) focada em estratégias de Growth Marketing.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Implementação de metodologias de experimentos para otimização de canais e estratégias de marketing, com foco em aquisição e melhorias de produto.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catho - Agência Interna -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Coordenador Agência Interna</h5>
+                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
+                                            </div>
+                                            <span class="badge bg-primary">setembro 2012 - dezembro 2016</span>
+                                        </div>
+                                        <p class="card-text">Barueri, São Paulo, Brasil</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Coordenação de projetos de marketing digital (B2C, B2B, Institucional), incluindo negociação com clientes internos e elaboração de cronogramas.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Acompanhamento de campanhas online (CPM, CPC, CPA, Retargeting) e E-mails Marketing, com foco em métricas e monitoramento de resultados.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Gestão do fluxo de jobs internos e suporte à equipe de desenvolvimento.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catho - Líder da Equipe de Desenvolvimento -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Líder da Equipe de Desenvolvimento</h5>
+                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
+                                            </div>
+                                            <span class="badge bg-primary">outubro 2009 - agosto 2012</span>
+                                        </div>
+                                        <p class="card-text">Barueri, São Paulo, Brasil</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Coordenação de projetos de Front End e Web Design, em colaboração com o time de UX.</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Responsável pela padronização do site e desenvolvimento da equipe.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Catho - Web Designer Jr a Especialista -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Web Designer Jr a Especialista</h5>
+                                                <h6 class="card-subtitle text-muted">Catho Online Ltda.</h6>
+                                            </div>
+                                            <span class="badge bg-primary">novembro 2006 - setembro 2009</span>
+                                        </div>
+                                        <p class="card-text">São Paulo Area, Brazil</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Foco em usabilidade e experiência do usuário, desenvolvimento de layouts, criação de Landing Pages, banners e E-mails Marketing.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Analista de marketing digital -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="card-title text-primary">Analista de marketing digital</h5>
+                                                <h6 class="card-subtitle text-muted"></h6>
+                                            </div>
+                                            <span class="badge bg-primary">agosto 2005 - novembro 2006</span>
+                                        </div>
+                                        <p class="card-text">São Paulo, Brasil</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>Planejamento e gerenciamento de mídia online, acompanhamento de métricas e participação na implementação de Google Analytics e RealMedia.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5">Competências</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="skill-category">
+                                <h5 class="mb-3"><i class="fas fa-chart-line text-primary me-2"></i>Business Intelligence & Analytics</h5>
+                                <div class="skills-list">
+                                    <span class="badge bg-primary me-2 mb-2">Google Analytics</span>
+                                    <span class="badge bg-primary me-2 mb-2">Supermetrics</span>
+                                    <span class="badge bg-primary me-2 mb-2">Sales Force</span>
+                                    <span class="badge bg-primary me-2 mb-2">Google Sheet</span>
+                                    <span class="badge bg-primary me-2 mb-2">Excel</span>
+                                    <span class="badge bg-primary me-2 mb-2">BigQuery</span>
+                                    <span class="badge bg-primary me-2 mb-2">GTM</span>
+                                    <span class="badge bg-primary me-2 mb-2">Data Studio</span>
+                                    <span class="badge bg-primary me-2 mb-2">Power BI</span>
+                                    <span class="badge bg-primary me-2 mb-2">Hotjar</span>
+                                    <span class="badge bg-primary me-2 mb-2">Google Optimize</span>
+                                    <span class="badge bg-primary me-2 mb-2">CRO</span>
+                                    <span class="badge bg-primary me-2 mb-2">Produtos Digitais</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="skill-category">
+                                <h5 class="mb-3"><i class="fas fa-brain text-primary me-2"></i>Ciência de Dados & Machine Learning</h5>
+                                <div class="skills-list">
+                                    <span class="badge bg-success me-2 mb-2">Aprendizado de Máquina</span>
+                                    <span class="badge bg-success me-2 mb-2">Análise Exploratória de Dados</span>
+                                    <span class="badge bg-success me-2 mb-2">Identificação de Padrões</span>
+                                    <span class="badge bg-success me-2 mb-2">Modelagem de Dados</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="skill-category">
+                                <h5 class="mb-3"><i class="fas fa-database text-primary me-2"></i>Engenharia de Dados</h5>
+                                <div class="skills-list">
+                                    <span class="badge bg-info me-2 mb-2">Pipelines de Dados</span>
+                                    <span class="badge bg-info me-2 mb-2">Manutenção de Bases de Dados</span>
+                                    <span class="badge bg-info me-2 mb-2">APIs para Extração</span>
+                                    <span class="badge bg-info me-2 mb-2">Ingestão de Dados</span>
+                                    <span class="badge bg-info me-2 mb-2">Google Cloud Platform (GCP)</span>
+                                    <span class="badge bg-info me-2 mb-2">BigQuery</span>
+                                    <span class="badge bg-info me-2 mb-2">Cloud Functions</span>
+                                    <span class="badge bg-info me-2 mb-2">Storage</span>
+                                    <span class="badge bg-info me-2 mb-2">Dataprep</span>
+                                    <span class="badge bg-info me-2 mb-2">Azure Databricks</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="skill-category">
+                                <h5 class="mb-3"><i class="fas fa-code text-primary me-2"></i>Programação & Bancos de Dados</h5>
+                                <div class="skills-list">
+                                    <span class="badge bg-success me-2 mb-2">Python</span>
+                                    <span class="badge bg-success me-2 mb-2">SQL</span>
+                                    <span class="badge bg-success me-2 mb-2">Google Sheets Query</span>
+                                    <span class="badge bg-success me-2 mb-2">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="skill-category">
+                                <h5 class="mb-3"><i class="fas fa-chart-bar text-primary me-2"></i>Visualização de Dados</h5>
+                                <div class="skills-list">
+                                    <span class="badge bg-warning me-2 mb-2">Data Studio</span>
+                                    <span class="badge bg-warning me-2 mb-2">Power BI</span>
+                                    <span class="badge bg-warning me-2 mb-2">Dashboards Interativos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="skill-category">
+                                <h5 class="mb-3"><i class="fas fa-cogs text-primary me-2"></i>Otimização & Testes</h5>
+                                <div class="skills-list">
+                                    <span class="badge bg-warning me-2 mb-2">Teste A/B</span>
+                                    <span class="badge bg-warning me-2 mb-2">Comportamento do Usuário</span>
+                                    <span class="badge bg-warning me-2 mb-2">Mapas de Calor</span>
+                                    <span class="badge bg-warning me-2 mb-2">Otimização de Conversão</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5">Formação Acadêmica</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="education-list">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="card-title text-primary">Pós-Graduação em Gestão e Estratégia em Comércio Eletrônico</h5>
+                                        <h6 class="card-subtitle text-muted">BSP - Business School São Paulo</h6>
+                                    </div>
+                                    <span class="badge bg-primary">2014 - 2015</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="card-title text-primary">Graduação em Design de Publicidade</h5>
+                                        <h6 class="card-subtitle text-muted">Escola Panamericana de Arte e Design</h6>
+                                    </div>
+                                    <span class="badge bg-primary">2005 - 2007</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="card-title text-primary">Superior em Propaganda e Marketing</h5>
+                                        <h6 class="card-subtitle text-muted">Universidade Paulista</h6>
+                                    </div>
+                                    <span class="badge bg-primary">2001 - 2004</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5">Certificações Adicionais e Conhecimentos</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="info-card">
+                                <h5><i class="fas fa-robot text-primary me-2"></i>Aprendizado de Máquina</h5>
+                                <p>Conhecimento em conceitos e aplicação de algoritmos de Machine Learning para resolução de problemas de negócio.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="info-card">
+                                <h5><i class="fas fa-flask text-primary me-2"></i>Teste A/B</h5>
+                                <p>Expertise em planejamento, execução e análise de testes A/B para otimização de performance.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="info-card">
+                                <h5><i class="fas fa-cloud text-primary me-2"></i>Azure Databricks</h5>
+                                <p>Familiaridade com a plataforma para processamento e análise de dados em larga escala.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="info-card">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i>CSPO (Certified Scrum Product Owner)</h5>
+                                <p>Certificação que demonstra compreensão de metodologias ágeis e foco no valor do produto.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="info-card">
+                                <h5><i class="fas fa-ad text-primary me-2"></i>Google Adwords</h5>
+                                <p>Conhecimento em plataformas de publicidade digital.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="info-card">
+                                <h5><i class="fas fa-shopping-cart text-primary me-2"></i>IBM Watson Commerce - Sales Mastery v2</h5>
+                                <p>Certificação em soluções de comércio eletrônico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5 text-white">Entre em Contato</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info text-center">
+                                <div class="contact-icon mb-3">
+                                    <i class="fas fa-phone fa-2x"></i>
+                                </div>
+                                <h5>Telefone</h5>
+                                <p>(11) 97547-8774</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info text-center">
+                                <div class="contact-icon mb-3">
+                                    <i class="fas fa-envelope fa-2x"></i>
+                                </div>
+                                <h5>Email</h5>
+                                <p>adriano.arruda@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info text-center">
+                                <div class="contact-icon mb-3">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                </div>
+                                <h5>Localização</h5>
+                                <p>São Paulo, SP, Brasil</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info text-center">
+                                <div class="contact-icon mb-3">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </div>
+                                <h5>LinkedIn</h5>
+                                <p><a href="https://www.linkedin.com/in/adrianoarruda" target="_blank" class="text-white">linkedin.com/in/adrianoarruda</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>&copy; 2024 Adriano Arruda. Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <script>
-        // Detectar a rolagem da página
-        window.addEventListener("scroll", function () {
-            var bottomBar = document.getElementById("bottom-bar");
 
-            // Ajuste o valor abaixo para definir a altura de início da barra
-            var alturaDeInicio = window.innerHeight - 400; // Por exemplo, inicia a 200 pixels do fundo
-
-            // Verificar se a rolagem atingiu a altura de início da barra
-            if (window.scrollY > alturaDeInicio) {
-                bottomBar.style.display = "block"; // Mostrar a barra
-            } else {
-                bottomBar.style.display = "none"; // Ocultar a barra
-            }
-        });
-    </script>
-    <!-- Hotjar Tracking Code for alfredomadeiras.com.br -->
-    <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 55661, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
+
