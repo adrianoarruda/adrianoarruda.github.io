@@ -9,7 +9,6 @@
 </head>
 <body>
     <aside class="sidebar">
-        <!-- CABEÇALHO DO MENU ATUALIZADO -->
         <div class="sidebar-header profile-card">
             <img src="https://raw.githubusercontent.com/adrianoarruda/adrianoarruda/main/1703709381951.jpg" alt="Foto de Adriano Arruda" class="profile-pic-small">
             <div class="profile-info">
@@ -17,7 +16,6 @@
                 <p>Profissional de Dados</p>
             </div>
         </div>
-
         <div class="menu-group">
             <p class="menu-group-title">Menu Principal</p>
             <a href="index.html" class="menu-item active"><i class="fas fa-home"></i>Dashboard</a>
@@ -36,45 +34,48 @@
                 <p style="font-size: 1.5em; font-weight: 700; color: var(--dark-color); margin: 0;">6</p>
             </div>
         </div>
-        <!-- RODAPÉ DO MENU REMOVIDO -->
     </aside>
 
     <main class="main-content">
         <header class="page-header">
             <div>
                 <h2>Olá, bem-vindo! 👋</h2>
-                <p>Este é o dashboard interativo da minha carreira.</p>
+                <p>Este é o dashboard da minha carreira.</p>
             </div>
-            <a href="https://www.linkedin.com/in/adrianoarruda" target="_blank" class="btn-primary"><i class="fab fa-linkedin"></i>Ver LinkedIn</a>
+            <div class="header-buttons">
+                <a href="https://adrianoarruda.github.io/cv_adriano_arruda.pdf" target="_blank" class="btn-secondary"><i class="fas fa-file-pdf"></i>Baixar PDF</a>
+                <a href="https://www.linkedin.com/in/adrianoarruda" target="_blank" class="btn-primary"><i class="fab fa-linkedin"></i>Ver LinkedIn</a>
+            </div>
         </header>
-        <div class="widget summary-card">
-            <p>Resumo Profissional</p>
-            <div class="summary-value">Especialista em Dados & Analytics</div>
-            <p>Ampla experiência em transformar dados em insights estratégicos, conectando análise técnica com resultados de negócio.</p>
-        </div>
-        <div class="grid-container grid-cols-3">
-            <div class="widget info-card">
-                <div class="info-card-content"><p class="label">Hard Skills</p><p class="value">10+ Tecnologias</p></div>
-                <i class="fas fa-code info-card-icon icon-success"></i>
+
+        <div class="grid-container intro-grid align-stretch">
+            <div class="widget summary-card">
+                <p>Resumo Profissional</p>
+                <div class="summary-value">Especialista em Dados & Analytics</div>
+                <p>Ampla experiência em transformar dados em insights estratégicos, conectando análise técnica com resultados de negócio.</p>
             </div>
-            <div class="widget info-card">
-                <div class="info-card-content"><p class="label">Soft Skills</p><p class="value">6 Competências</p></div>
-                <i class="fas fa-users info-card-icon icon-warning"></i>
-            </div>
-            <div class="widget info-card">
-                <div class="info-card-content"><p class="label">Resultado Chave</p><p class="value">+12% Conversão</p></div>
-                <i class="fas fa-chart-line info-card-icon icon-danger"></i>
+            <div class="widget">
+                <h3 class="widget-title"><span><i class="fas fa-user"></i> Sobre Mim</span></h3>
+                <p class="professional-summary">
+                    Profissional com ampla experiência em Business Intelligence, Analytics e Data Science, atuando em projetos nos setores financeiro, de e-commerce e consumo. Especialista em análise, modelagem e visualização de dados, transformo grandes volumes de informações em insights estratégicos que aceleram a tomada de decisão e impulsionam o desenvolvimento de produtos digitais. Entusiasta de Inteligência Artificial aplicada a negócios, combino sólida base técnica com visão estratégica, aliada a vivência em marketing digital e CRO, o que amplia minha capacidade de conectar dados a resultados concretos.
+                </p>
             </div>
         </div>
-        <div class="widget">
-            <h3 class="widget-title"><span><i class="fas fa-bullseye"></i> Principais Áreas de Atuação</span></h3>
-            <div class="soft-skills-list">
-                <span><i class="fas fa-lightbulb"></i>Resolução de Problemas</span>
-                <span><i class="fas fa-comments"></i>Comunicação Estratégica</span>
-                <span><i class="fas fa-sitemap"></i>Visão de Negócio</span>
-                <span><i class="fas fa-users-cog"></i>Liderança de Equipes</span>
-                <span><i class="fas fa-handshake"></i>Gestão de Stakeholders</span>
-                <span><i class="fas fa-chart-line"></i>Pensamento Analítico</span>
+
+        <div class="grid-container summary-grid">
+            <div class="widget">
+                <h3 class="widget-title">
+                    <span><i class="fas fa-briefcase"></i>Últimas Experiências</span>
+                    <a href="experiencia.html">Ver todas →</a>
+                </h3>
+                <div id="experience-summary-container"></div>
+            </div>
+            <div class="widget">
+                <h3 class="widget-title">
+                    <span><i class="fas fa-star"></i>Principais Competências</span>
+                    <a href="competencias.html">Ver todas →</a>
+                </h3>
+                <div id="skills-summary-container"></div>
             </div>
         </div>
     </main>

@@ -9,7 +9,6 @@
 </head>
 <body>
     <aside class="sidebar">
-        <!-- CABEÇALHO DO MENU ATUALIZADO -->
         <div class="sidebar-header profile-card">
             <img src="https://raw.githubusercontent.com/adrianoarruda/adrianoarruda/main/1703709381951.jpg" alt="Foto de Adriano Arruda" class="profile-pic-small">
             <div class="profile-info">
@@ -17,7 +16,6 @@
                 <p>Profissional de Dados</p>
             </div>
         </div>
-
         <div class="menu-group">
             <p class="menu-group-title">Menu Principal</p>
             <a href="index.html" class="menu-item"><i class="fas fa-home"></i>Dashboard</a>
@@ -36,7 +34,6 @@
                 <p style="font-size: 1.5em; font-weight: 700; color: var(--dark-color); margin: 0;">6</p>
             </div>
         </div>
-        <!-- RODAPÉ DO MENU REMOVIDO -->
     </aside>
 
     <main class="main-content">
@@ -45,9 +42,21 @@
                 <h2>Linha do Tempo Profissional</h2>
                 <p>Uma jornada através das minhas principais experiências e conquistas.</p>
             </div>
+            <div class="filter-container">
+                <label for="start-year">De:</label>
+                <input type="range" id="start-year" min="2006" max="2024" value="2006">
+                <span id="start-year-label">2006</span>
+                
+                <label for="end-year" style="margin-left: 15px;">Até:</label>
+                <input type="range" id="end-year" min="2006" max="2024" value="2024">
+                <span id="end-year-label">2024</span>
+            </div>
         </header>
+        
         <div class="widget">
-            <h3 class="widget-title"><span><i class="fas fa-briefcase"></i>Experiências de 2006 a 2024</span></h3>
+            <h3 class="widget-title">
+                <span><i class="fas fa-briefcase"></i>Experiências</span>
+            </h3>
             <div id="timeline-container"></div>
         </div>
     </main>
